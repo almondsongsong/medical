@@ -4,1004 +4,365 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>아래쪽은 다 압니다만</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{
-  box-sizing:border-box;
-  min-width:0;
+@font-face{
+  font-family:"PosterMyeongjo";
+  font-style:normal;
+  font-weight:400;
+  font-display:block;
+  src:url("data:font/woff2;base64,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") format("woff2");
 }
-
-html{
-  scroll-behavior:smooth;
+@font-face{
+  font-family:"MaruBuri";
+  src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff") format("woff");
+  font-weight:400;
+  font-display:swap;
 }
-
+*{box-sizing:border-box;min-width:0;}
+html{scroll-behavior:smooth;}
 body{
-  margin:0;
-  width:100%;
-  overflow-x:hidden;
-  background:#061713;
-  color:#eef4f1;
-  font-family:
-    "Pretendard",
-    "Noto Sans KR",
-    "Apple SD Gothic Neo",
-    "Malgun Gothic",
-    sans-serif;
-  word-break:keep-all;
-  overflow-wrap:anywhere;
+  margin:0;width:100%;overflow-x:hidden;
+  background:#061713;color:#eef4f1;
+  font-family:"Noto Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  word-break:keep-all;overflow-wrap:break-word;
 }
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  display:block;
-  width:100%;
-}
-
+a{color:inherit;text-decoration:none;}
+img{display:block;width:100%;}
 :root{
-  --bg-dark:#061713;
-  --bg-dark-2:#08201a;
-  --bg-dark-3:#0b2a22;
-
-  --line-dark:rgba(160,190,178,.14);
-  --line-mid:#29443b;
-
-  --white:#f4f5f1;
-  --paper:#fbfcfa;
-  --ink:#16211d;
-  --muted:#61726b;
-  --soft:#7e8c86;
-
-  --green-accent:#83a79a;
-  --green-accent-2:#6e9788;
-  --green-deep:#21453a;
+  --dark:#061713;--white:#f4f5f1;--ink:#17231e;
 }
-
-.batang{
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-}
-
-.wrap{
-  width:min(1180px, calc(100% - 80px));
-  margin:0 auto;
-}
-
-.section{
-  padding:100px 0;
-}
-
-.section-light{
-  background:var(--white);
-  color:var(--ink);
-}
-
-.section-dark{
-  background:var(--bg-dark);
-  color:#eef4f1;
-}
-
-.section-head{
-  display:grid;
-  grid-template-columns:120px 1fr;
-  gap:22px;
-  align-items:start;
-  margin-bottom:34px;
-}
-
-.section-kicker{
-  color:#7e9b90;
-  font-family:Consolas, monospace;
-  font-size:10px;
-  letter-spacing:2px;
-  padding-top:10px;
-}
-
-.section-light .section-kicker{
-  color:#7f928a;
-}
-
-.section-title-block small{
-  display:block;
-  color:#6f8a80;
-  font-family:Consolas, monospace;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-bottom:8px;
-}
-
-.section-light .section-title-block small{
-  color:#82948d;
-}
-
+.wrap{width:min(1180px,calc(100% - 72px));margin:0 auto;}
+.section-light{background:var(--white);color:var(--ink);}
+.section-dark{background:var(--dark);color:#edf4f0;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:34px;}
+.section-code{margin-bottom:7px;color:#71857d;font-family:Consolas,monospace;font-size:9px;letter-spacing:2px;}
+.section-dark .section-code{color:#809e93;}
 .section-title{
-  margin:0;
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-  font-size:52px;
-  font-weight:700;
-  line-height:1.15;
-  letter-spacing:-1px;
+  margin:0;font-family:"Noto Serif KR","MaruBuri",serif;font-size:56px;font-weight:500;
+  font-synthesis:none;line-height:1.25;letter-spacing:-0.6px;
 }
-
-.section-desc{
-  margin-top:14px;
-  color:#8ea59b;
-  font-size:14px;
-  line-height:1.8;
-}
-
-.section-light .section-desc{
-  color:#71827b;
-}
-
-
-/* ==================================================
-   HEADER
-================================================== */
-
-.topbar{
-  height:44px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  background:#04100d;
-}
-
-.topbar-inner{
-  width:100%;
-  height:100%;
-  padding:0 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.topbar-left{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.topbar-plus{
-  width:28px;
-  height:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(167,198,186,.5);
-  color:#b8d0c7;
-  font-size:15px;
-  line-height:1;
-}
-
-.topbar-name{
-  font-size:10px;
-  font-weight:700;
-  color:#ebf3ef;
-}
-
-.topbar-sub{
-  margin-top:1px;
-  color:#6e857c;
-  font-family:Consolas, monospace;
-  font-size:7px;
-  letter-spacing:1.4px;
-}
-
-.topbar-right{
-  color:#6e857c;
-  font-family:Consolas, monospace;
-  font-size:8px;
-  letter-spacing:1.4px;
-}
-
-
-/* ==================================================
-   HERO
-================================================== */
-
+.topbar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:#030d0a;border-bottom:1px solid #1d322a;}
+.topbar-left{display:flex;align-items:center;gap:11px;}
+.topbar-cross{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid #597c6f;color:#a6c5b9;font-size:15px;}
+.topbar-name{color:#eef4f1;font-size:10px;font-weight:800;}
+.topbar-en{margin-top:2px;color:#60796f;font-family:Consolas,monospace;font-size:6px;letter-spacing:1.4px;}
+.topbar-status{color:#688378;font-family:Consolas,monospace;font-size:7px;letter-spacing:1.5px;}
 .hero{
-  position:relative;
-  min-height:760px;
+  min-height:600px;display:flex;align-items:center;
   background:
-    radial-gradient(circle at 78% 18%, rgba(78,120,104,.16), transparent 26%),
-    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px),
-    linear-gradient(90deg, #071611 0%, #061713 45%, #08201a 100%);
-  background-size:
-    auto,
-    64px 64px,
-    64px 64px,
-    auto;
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+    radial-gradient(circle at 80% 20%,rgba(58,103,87,.12),transparent 32%),
+    #061713;
+  background-size:50px 50px,50px 50px,auto,auto;
 }
-
-.hero-inner{
-  padding:84px 0 64px;
+.hero-inner{width:min(950px,100%);margin:0 auto;}
+.hero-main{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center;}
+.hero-label{display:flex;align-items:center;gap:10px;color:#7d9d91;font-family:Consolas,monospace;font-size:8px;letter-spacing:2.3px;}
+.hero-label::before{content:"";width:28px;height:1px;background:#54776a;}
+.hero-title{margin:18px 0 0;color:#f1f6f3;font-family:"PosterMyeongjo","Noto Serif KR",serif;font-size:75px;font-weight:400;font-synthesis:none;line-height:1.08;letter-spacing:-2px;}
+.hero-copy-wrap{padding-left:24px;border-left:1px solid #263c34;}
+.hero-copy{margin:0;color:#d5e2dc;font-family:"MaruBuri","Noto Serif KR",serif;font-size:20px;font-weight:400;line-height:1.9;letter-spacing:0.01em;}
+.hero-copy strong{color:#f2f7f4;font-family:"Noto Serif KR",serif;font-weight:500;font-synthesis:none;}
+.hero-bottom{margin-top:40px;padding-top:20px;border-top:1px solid #243b32;}
+.hero-meta{color:#88a398;font-size:11px;}
+.hero-meta strong{color:#bdd2ca;}
+.story-section{padding:74px 0 80px;}
+.story-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-bottom:36px;}
+.story-title{margin:0;color:#14251e;font-family:"Noto Serif KR","MaruBuri",serif;font-size:56px;font-weight:500;font-synthesis:none;line-height:1.3;letter-spacing:-0.6px;}
+.story-side{padding-top:3px;color:#7b8983;font-size:12px;line-height:1.7;text-align:right;}
+.story-records{border-top:1px solid #82978e;}
+.story-record{position:relative;display:grid;grid-template-columns:280px minmax(0,1fr);align-items:center;border-bottom:1px solid #d4dcd7;transition:background .18s ease;}
+.story-record::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:#1b5642;transition:width .18s ease;}
+.story-record:hover{background:#e7f1eb;}
+.story-record:hover::before{width:5px;}
+.story-key{padding:17px 20px 17px 16px;}
+.story-key span{display:block;color:#7f918a;font-family:Consolas,monospace;font-size:11px;letter-spacing:1.3px;}
+.story-key strong{display:block;margin-top:6px;color:#1a3027;font-family:"Noto Serif KR","MaruBuri",serif;font-size:20px;font-weight:400;line-height:1.5;letter-spacing:0.01em;}
+.story-value{min-width:0;min-height:82px;display:block;padding:18px 0 18px 28px;border-left:1px solid #d4dcd7;color:#2d4038;font-family:"Noto Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;font-weight:400;line-height:1.85;letter-spacing:-0.2px;}
+.story-value strong{color:#12352b;font-family:"Noto Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:inherit;font-weight:700;}
+.story-quote-row{margin-top:22px;}
+.story-quote{max-width:640px;padding:22px 25px;background:#e3eae6;border-left:3px solid #537e6e;color:#294238;font-family:"MaruBuri","Noto Serif KR",serif;font-size:20px;font-weight:400;line-height:1.85;letter-spacing:0.012em;}
+.staff-section{padding:72px 0 76px;background:#061713;}
+.scroll-hint{color:#839f94;font-family:Consolas,monospace;font-size:8px;letter-spacing:1px;}
+.staff-rail{display:flex;gap:18px;overflow-x:auto;padding:16px 4px 22px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.staff-rail::-webkit-scrollbar{height:5px;}
+.staff-rail::-webkit-scrollbar-track{background:#13271f;}
+.staff-rail::-webkit-scrollbar-thumb{background:#63887a;}
+.staff-card{flex:0 0 390px;scroll-snap-align:start;background:#f8f9f6;color:#17231e;border:1px solid #415e52;transition:transform .22s ease,box-shadow .22s ease;}
+.staff-card:hover{transform:scale(1.035);box-shadow:0 18px 36px rgba(0,0,0,.28);}
+.staff-top{display:flex;justify-content:space-between;padding:9px 12px;background:#17382d;color:#b7cec5;font-family:Consolas,monospace;font-size:7px;letter-spacing:1.2px;}
+.staff-photo{height:auto;aspect-ratio:461 / 639;overflow:hidden;background:#e5eae7;}
+.staff-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+.staff-body{padding:19px;}
+.staff-dept{color:#657f75;font-family:Consolas,monospace;font-size:8px;letter-spacing:1.4px;}
+.staff-name-line{display:flex;align-items:baseline;gap:7px;margin-top:6px;}
+.staff-name{color:#192821;font-size:25px;font-weight:900;}
+.staff-you{color:#667b72;font-size:14px;font-weight:800;}
+.staff-en{margin-top:2px;color:#86928d;font-family:Consolas,monospace;font-size:7px;}
+.staff-spec{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
+.spec{padding:5px 7px;background:#edf1ee;border:1px solid #d2d9d5;color:#576a62;font-size:9px;font-weight:700;}
+.staff-summary{margin-top:14px;color:#56655f;font-size:14px;line-height:1.75;}
+.staff-summary strong{color:#2e5647;}
+.relation-box{margin-top:14px;padding-top:12px;border-top:1px solid #d6ddd9;}
+.relation-title{color:#758a82;font-family:Consolas,monospace;font-size:7px;letter-spacing:1.3px;}
+.relation-row{display:grid;grid-template-columns:72px 1fr;gap:7px;margin-top:7px;font-size:12px;line-height:1.55;}
+.relation-row b{color:#315d4d;}
+.relation-row span{color:#68766f;}
+.case-section{padding:72px 0 78px;}
+.case-list{border-top:1px solid #93a69e;}
+.case-row{position:relative;display:grid;grid-template-columns:78px 330px minmax(0,1fr);align-items:stretch;min-height:88px;background:#f8f9f6;border-bottom:1px solid #d2dbd6;transition:background .18s ease;}
+.case-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:#1b5642;transition:width .18s ease;}
+.case-row:hover{background:#e7f1eb;}
+.case-row:hover::before{width:5px;}
+.case-row:hover .case-no,.case-row:hover .case-name{background:#d5e7dc;}
+.case-no{padding:19px 16px;color:#45695b;font-family:Consolas,monospace;font-size:19px;transition:background .18s ease;}
+.case-name{align-self:stretch;display:flex;align-items:center;padding:18px 22px;border-left:1px solid #d3dcd7;color:#1a3027;font-family:"Noto Serif KR","MaruBuri",serif;font-size:20px;font-weight:400;line-height:1.5;letter-spacing:0.01em;transition:background .18s ease;}
+.case-desc{align-self:stretch;display:flex;align-items:center;padding:18px 22px;border-left:1px solid #d3dcd7;color:#3f5149;font-size:16px;line-height:1.7;}
+.play-section{padding:66px 0 72px;}
+.play-intro{margin:0 0 20px 0;color:#8da49a;font-size:12px;}
+.play-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+.play-card{padding:14px 15px;background:#f5f6f3;border:1px solid #d4dbd7;color:#19251f;transition:transform .22s ease,box-shadow .22s ease;}
+.play-card:hover{transform:scale(1.035);box-shadow:0 12px 28px rgba(0,0,0,.22);}
+.play-no{color:#87958f;font-family:Consolas,monospace;font-size:8px;}
+.play-title{margin-top:6px;color:#19251f;font-size:18px;font-weight:800;line-height:1.35;}
+.play-text{margin-top:6px;color:#4d5e57;font-size:15px;line-height:1.65;}
+.access-section{padding:72px 0;}
+.access-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center;}
+.access-code{color:#72847d;font-family:Consolas,monospace;font-size:9px;letter-spacing:2px;}
+.access-title{margin:12px 0 0;color:#172820;font-family:"Noto Serif KR","MaruBuri",serif;font-size:56px;font-weight:500;font-synthesis:none;letter-spacing:-0.6px;line-height:1.3;}
+.access-copy{margin-top:10px;color:#78857f;font-size:12px;}
+.access-buttons{display:grid;gap:8px;}
+.access-button{display:grid;grid-template-columns:1fr auto;align-items:center;padding:18px 20px;background:#fff;border:1px solid #cad4cf;}
+.access-button strong{display:block;color:#20382e;font-size:16px;}
+.access-button small{display:block;margin-top:4px;color:#87948e;font-family:Consolas,monospace;font-size:11px;}
+.access-arrow{color:#527769;font-size:18px;}
+.footer{padding:32px 20px calc(32px + env(safe-area-inset-bottom));background:#030e0b;border-top:1px solid #1c3028;text-align:center;}
+.footer-code{color:#566f65;font-family:Consolas,monospace;font-size:7px;letter-spacing:1.8px;}
+.footer-main{margin-top:8px;color:#81978e;font-size:10px;font-weight:800;}
+.footer-text{margin-top:7px;color:#556960;font-size:8px;line-height:1.7;}
+@media(max-width:950px){
+  .wrap{width:100%;padding-left:20px;padding-right:20px;}
+  .hero{min-height:auto;padding:65px 0;}
+  .hero-main{grid-template-columns:1fr;gap:32px;}
+  .hero-copy-wrap{padding-left:18px;}
+  .hero-title{font-size:64px;}
+  .story-record{grid-template-columns:220px 1fr;}
+  .case-row{grid-template-columns:65px 280px 1fr;}
+  .play-grid{grid-template-columns:repeat(2,1fr);}
+  .access-layout{grid-template-columns:1fr;gap:32px;}
 }
-
-.hero-main{
-  max-width:940px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:70px;
-  align-items:center;
-}
-
-.hero-title-block{
-  padding-top:30px;
-}
-
-.hero-label{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#8ba89c;
-  font-family:Consolas, monospace;
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-.hero-label::before{
-  content:"";
-  display:block;
-  width:28px;
-  height:1px;
-  background:#5b7f72;
-}
-
-.hero-title{
-  margin:20px 0 0;
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-  font-size:88px;
-  font-weight:700;
-  line-height:1.06;
-  letter-spacing:-3px;
-  color:#f5f8f6;
-}
-
-.hero-copy-wrap{
-  padding-left:24px;
-  border-left:1px solid rgba(164,193,182,.18);
-}
-
-.hero-copy{
-  margin:0;
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-  color:#d7e2dd;
-  font-size:20px;
-  line-height:1.95;
-}
-
-.hero-copy strong{
-  color:#ffffff;
-  font-weight:800;
-}
-
-.hero-bottom{
-  max-width:940px;
-  margin:42px auto 0;
-  border-top:1px solid rgba(164,193,182,.15);
-  padding-top:20px;
-}
-
-.hero-meta{
-  color:#89a59a;
-  font-size:14px;
-  line-height:1.8;
-}
-
-.hero-meta strong{
-  color:#cfe0d8;
-  font-weight:700;
-}
-
-.hero-people{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:48px;
-}
-
-.hero-person small{
-  display:block;
-  color:#7c998d;
-  font-family:Consolas, monospace;
-  font-size:9px;
-  letter-spacing:1.8px;
-  margin-bottom:6px;
-}
-
-.hero-person b{
-  display:block;
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-  font-size:28px;
-  line-height:1.25;
-  color:#ffffff;
-  margin-bottom:4px;
-}
-
-.hero-person span{
-  color:#a6bbb3;
-  font-size:14px;
-  line-height:1.6;
-}
-
-
-/* ==================================================
-   CASE FILE
-================================================== */
-
-.case-section{
-  padding-top:96px;
-  padding-bottom:86px;
-}
-
-.case-table{
-  margin-top:12px;
-  border-top:1px solid #cfd8d3;
-}
-
-.case-row{
-  display:grid;
-  grid-template-columns:70px 1fr 110px;
-  align-items:center;
-  min-height:56px;
-  border-bottom:1px solid #d6dfdb;
-}
-
-.case-no{
-  color:#7f938a;
-  font-family:Consolas, monospace;
-  font-size:12px;
-  letter-spacing:1px;
-}
-
-.case-name{
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-  font-size:20px;
-  font-weight:700;
-  color:#1d2d27;
-}
-
-.case-tag{
-  color:#7c8e87;
-  font-size:12px;
-  text-align:right;
-}
-
-
-/* ==================================================
-   PLAY GUIDE
-================================================== */
-
-.play-section{
-  background:
-    linear-gradient(90deg, #03110d 0%, #041612 55%, #061713 100%);
-}
-
-.play-grid{
-  margin-top:24px;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:10px;
-}
-
-.play-card{
-  background:#f7f8f6;
-  border:1px solid #d6ddd9;
-  padding:14px 16px 16px;
-  color:#16211d;
-}
-
-.play-card small{
-  display:block;
-  color:#86958f;
-  font-family:Consolas, monospace;
-  font-size:9px;
-  letter-spacing:1.2px;
-}
-
-.play-card-title{
-  margin-top:7px;
-  font-size:17px;
-  font-weight:800;
-  color:#15211d;
-  line-height:1.4;
-}
-
-.play-card-text{
-  margin-top:6px;
-  color:#6d7b76;
-  font-size:13px;
-  line-height:1.7;
-}
-
-
-/* ==================================================
-   ACCESS
-================================================== */
-
-.access-layout{
-  display:grid;
-  grid-template-columns:.95fr 1.05fr;
-  gap:70px;
-  align-items:start;
-}
-
-.access-title{
-  margin:10px 0 0;
-  font-family:
-    "Batang",
-    "바탕",
-    "BatangChe";
-  font-size:46px;
-  line-height:1.18;
-  color:#13211c;
-}
-
-.access-copy{
-  margin-top:14px;
-  color:#73827b;
-  font-size:14px;
-  line-height:1.8;
-}
-
-.access-list{
-  display:grid;
-  gap:10px;
-}
-
-.access-button{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:14px;
-  align-items:center;
-  padding:18px 20px;
-  border:1px solid #ccd6d1;
-  background:#ffffff;
-  transition:.2s ease;
-}
-
-.access-button:hover{
-  transform:translateX(4px);
-  border-color:#809b90;
-}
-
-.access-button strong{
-  display:block;
-  font-size:15px;
-  color:#20322c;
-}
-
-.access-button small{
-  display:block;
-  margin-top:4px;
-  color:#8b9893;
-  font-family:Consolas, monospace;
-  font-size:9px;
-  letter-spacing:1.2px;
-}
-
-.access-arrow{
-  color:#5a786d;
-  font-size:18px;
-}
-
-
-/* ==================================================
-   FOOTER
-================================================== */
-
-.footer{
-  background:#04100d;
-  border-top:1px solid rgba(255,255,255,.06);
-  text-align:center;
-  padding:34px 20px calc(34px + env(safe-area-inset-bottom));
-}
-
-.footer-code{
-  color:#61776f;
-  font-family:Consolas, monospace;
-  font-size:8px;
-  letter-spacing:2px;
-}
-
-.footer-main{
-  margin-top:10px;
-  color:#8fa39b;
-  font-size:11px;
-  font-weight:700;
-}
-
-.footer-text{
-  margin-top:8px;
-  color:#5f726b;
-  font-size:9px;
-  line-height:1.8;
-}
-
-
-/* ==================================================
-   TABLET
-================================================== */
-
-@media(max-width:980px){
-
-  .wrap{
-    width:100%;
-    padding-left:20px;
-    padding-right:20px;
-  }
-
-  .hero{
-    min-height:auto;
-  }
-
-  .hero-main{
-    grid-template-columns:1fr;
-    gap:34px;
-  }
-
-  .hero-title-block{
-    padding-top:0;
-  }
-
-  .hero-copy-wrap{
-    padding-left:18px;
-  }
-
-  .hero-title{
-    font-size:72px;
-  }
-
-  .hero-people{
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-  }
-
-  .play-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .access-layout{
-    grid-template-columns:1fr;
-    gap:34px;
-  }
-
-  .section-head{
-    grid-template-columns:100px 1fr;
-  }
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
-
 @media(max-width:620px){
-
-  .topbar{
-    height:48px;
-  }
-
-  .topbar-right{
-    display:none;
-  }
-
-  .wrap{
-    padding-left:15px;
-    padding-right:15px;
-  }
-
-  .section{
-    padding:64px 0;
-  }
-
-  .section-head{
-    grid-template-columns:1fr;
-    gap:8px;
-    margin-bottom:26px;
-  }
-
-  .section-kicker{
-    padding-top:0;
-    font-size:9px;
-  }
-
-  .section-title-block small{
-    font-size:9px;
-  }
-
-  .section-title{
-    font-size:36px;
-  }
-
-  .section-desc{
-    font-size:13px;
-  }
-
-  .hero-inner{
-    padding:56px 0 44px;
-  }
-
-  .hero-title{
-    font-size:54px;
-    letter-spacing:-2px;
-  }
-
-  .hero-copy-wrap{
-    padding-left:14px;
-  }
-
-  .hero-copy{
-    font-size:17px;
-    line-height:1.85;
-  }
-
-  .hero-bottom{
-    margin-top:30px;
-    padding-top:16px;
-  }
-
-  .hero-meta{
-    font-size:13px;
-  }
-
-  .hero-people{
-    grid-template-columns:1fr;
-    gap:18px;
-    margin-top:16px;
-  }
-
-  .hero-person b{
-    font-size:23px;
-  }
-
-  .hero-person span{
-    font-size:13px;
-  }
-
-  .case-row{
-    grid-template-columns:56px 1fr 74px;
-    min-height:54px;
-    gap:8px;
-  }
-
-  .case-name{
-    font-size:16px;
-  }
-
-  .case-tag{
-    font-size:11px;
-  }
-
-  .play-grid{
-    grid-template-columns:1fr;
-  }
-
-  .play-card-title{
-    font-size:16px;
-  }
-
-  .play-card-text{
-    font-size:12px;
-  }
-
-  .access-title{
-    font-size:34px;
-  }
-
-  .access-copy{
-    font-size:13px;
-  }
-
-  .access-button strong{
-    font-size:14px;
-  }
+  .topbar{height:48px;}
+  .topbar-status{display:none;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .section-head{display:block;margin-bottom:24px;}
+  .section-title,.story-title,.access-title{font-size:36px;}
+  .hero{padding:55px 0;}
+  .hero-title{font-size:47px;}
+  .hero-copy{font-size:18px;}
+  .hero-bottom{margin-top:30px;}
+  .hero-meta{font-size:10px;line-height:1.7;}
+  .story-heading{display:block;}
+  .story-side{margin-top:10px;text-align:left;}
+  .story-record{grid-template-columns:1fr;}
+  .story-key{padding:13px 0 9px 16px;}
+  .story-value{min-height:auto;padding:0 0 15px;border-left:0;}
+  .story-quote{font-size:15px;padding:18px;}
+  .staff-card{flex-basis:84vw;}
+  .case-row{grid-template-columns:52px 1fr;min-height:auto;}
+  .case-no{align-self:stretch;display:flex;align-items:center;padding:14px 11px;border-right:1px solid #d3dcd7;}
+  .case-name{border-left:0;padding:14px;font-size:15px;}
+  .case-desc{grid-column:1 / -1;padding:10px 14px 14px;border-left:0;border-top:1px solid #e0e5e2;font-size:15px;}
+  .play-grid{grid-template-columns:1fr;}
+  .play-title{font-size:17px;}
 }
-
 @media(max-width:390px){
-
-  .hero-title{
-    font-size:46px;
-  }
-
-  .section-title{
-    font-size:32px;
-  }
+  .hero-title{font-size:42px;}
 }
 </style>
 </head>
-
 <body>
-
 <header class="topbar">
-  <div class="topbar-inner">
-    <div class="topbar-left">
-      <div class="topbar-plus">+</div>
-      <div>
-        <div class="topbar-name">성운대 메디컬 센터</div>
-        <div class="topbar-sub">SEONGWOON UNIVERSITY MEDICAL CENTER</div>
-      </div>
-    </div>
-
-    <div class="topbar-right">
-      INTERNAL INFORMATION SYSTEM ・ SYSTEM ONLINE
+  <div class="topbar-left">
+    <div class="topbar-cross">+</div>
+    <div>
+      <div class="topbar-name">성운대 메디컬 센터</div>
+      <div class="topbar-en">SEONGWOON UNIVERSITY MEDICAL CENTER</div>
     </div>
   </div>
+  <div class="topbar-status">INTERNAL MEDICAL SYSTEM · SYSTEM ONLINE</div>
 </header>
-
-
 <section class="hero">
-  <div class="wrap hero-inner">
-
-    <div class="hero-main">
-
-      <div class="hero-title-block">
-        <div class="hero-label">MEDICAL ROMANCE</div>
-
-        <h1 class="hero-title">
-          아래쪽은<br>
-          다 압니다만
-        </h1>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div>
+          <div class="hero-label">MEDICAL ROMANCE</div>
+          <h1 class="hero-title">아래쪽은<br>다 압니다만</h1>
+        </div>
+        <div class="hero-copy-wrap">
+          <p class="hero-copy">
+            산부인과 남자와 비뇨기과 여자.<br>
+            사람의 몸은 누구보다 잘 아는 두 의사가<br>
+            <strong>정작 서로의 마음만큼은 쉽게 읽어내지 못한다.</strong>
+          </p>
+        </div>
       </div>
-
-      <div class="hero-copy-wrap">
-        <p class="hero-copy">
-          산부인과 남자와 비뇨기과 여자.<br>
-          사람의 몸은 누구보다 잘 아는 두 의사가<br>
-          <strong>정작 서로의 마음만큼은 쉽게 읽어내지 못한다.</strong>
-        </p>
+      <div class="hero-bottom">
+        <div class="hero-meta">
+          <strong>성운대 메디컬 센터</strong>&nbsp;·&nbsp;메디컬 · 오피스 · 어른 로맨스&nbsp;·&nbsp;<strong>권태하 × 당신</strong>
+        </div>
       </div>
-
     </div>
-
-    <div class="hero-bottom">
-
-      <div class="hero-meta">
-        <strong>성운대 메디컬 센터</strong> ・
-        메디컬 · 오피스 · 어른 로맨스 ・
-        <strong>권태하 × 당신</strong>
-      </div>
-
-      <div class="hero-people">
-
-        <div class="hero-person">
-          <small>OB/GYN</small>
-          <b>권태하</b>
-          <span>산부인과 전문의</span>
-        </div>
-
-        <div class="hero-person">
-          <small>UROLOGY</small>
-          <b>당신</b>
-          <span>비뇨기과 교수</span>
-        </div>
-
-        <div class="hero-person">
-          <small>ANESTH.</small>
-          <b>윤시우</b>
-          <span>마취통증의학과 교수</span>
-        </div>
-
-      </div>
-
-    </div>
-
   </div>
 </section>
-
-
-<section class="section section-light case-section">
+<section class="story-section section-light">
   <div class="wrap">
-
+    <div class="section-code">01 / STORY</div>
+    <div class="story-heading">
+      <h2 class="story-title">성운대 메디컬 센터</h2>
+      <div class="story-side">대학병원을 배경으로 펼쳐지는<br>세 의료진의 메디컬 로맨스.</div>
+    </div>
+    <div class="story-records">
+      <div class="story-record">
+        <div class="story-key"><span>LOCATION</span><strong>성운대 메디컬 센터</strong></div>
+        <div class="story-value">대한민국 최고 권위의 대학병원 <strong>성운대 메디컬 센터.</strong></div>
+      </div>
+      <div class="story-record">
+        <div class="story-key"><span>MAIN</span><strong>산부인과 × 비뇨기과</strong></div>
+        <div class="story-value">산부인과 전문의 <strong>권태하</strong>와 비뇨기과 교수인 <strong>당신</strong>은 업무 영역은 가깝지만 만나기만 하면 부딪히는 사이.</div>
+      </div>
+      <div class="story-record">
+        <div class="story-key"><span>SUPPORT</span><strong>마취통증의학과</strong></div>
+        <div class="story-value">그리고 <strong>당신</strong>의 곁에는 오랜 시간 함께해 온 마취통증의학과 교수 <strong>윤시우</strong>가 있다.</div>
+      </div>
+    </div>
+    <div class="story-quote-row">
+      <div class="story-quote">수술실에서는 누구보다 냉정한 의사들.<br>하지만 가운을 벗은 뒤의 관계까지 명확한 것은 아니다.</div>
+    </div>
+  </div>
+</section>
+<section class="staff-section">
+  <div class="wrap">
     <div class="section-head">
-      <div class="section-kicker">03 / CASES</div>
-
-      <div class="section-title-block">
-        <small>CASE FILE</small>
-        <h2 class="section-title">케이스 파일</h2>
-      </div>
-    </div>
-
-    <div class="case-table">
-
-      <div class="case-row">
-        <div class="case-no">01</div>
-        <div class="case-name">앙숙의 시작</div>
-        <div class="case-tag">외래</div>
-      </div>
-
-      <div class="case-row">
-        <div class="case-no">02</div>
-        <div class="case-name">단둘이 남은 학회</div>
-        <div class="case-tag">학회</div>
-      </div>
-
-      <div class="case-row">
-        <div class="case-no">03</div>
-        <div class="case-name">폭우 속의 당직실</div>
-        <div class="case-tag">당직실</div>
-      </div>
-
-      <div class="case-row">
-        <div class="case-no">04</div>
-        <div class="case-name">도망치는 여자, 잡지 않는 남자</div>
-        <div class="case-tag">관계</div>
-      </div>
-
-      <div class="case-row">
-        <div class="case-no">05</div>
-        <div class="case-name">고난도 합동 수술</div>
-        <div class="case-tag">수술실</div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section class="section section-dark play-section">
-  <div class="wrap">
-
-    <div class="section-head">
-      <div class="section-kicker">04 / PLAY</div>
-
-      <div class="section-title-block">
-        <small>HOW TO ENJOY</small>
-        <h2 class="section-title">추천 플레이</h2>
-        <div class="section-desc">
-          정해진 루트 대신, 병원 일과 대화로 세 사람의 거리를 직접 정해 보세요.
-        </div>
-      </div>
-    </div>
-
-    <div class="play-grid">
-
-      <div class="play-card">
-        <small>01</small>
-        <div class="play-card-title">🩺 진료와 협진</div>
-        <div class="play-card-text">
-          환자 케이스를 두고 권태하와 의견을 나누거나, 두 과의 협진을 만들어 보세요.
-        </div>
-      </div>
-
-      <div class="play-card">
-        <small>02</small>
-        <div class="play-card-title">🏥 병원 일상</div>
-        <div class="play-card-text">
-          외래, 회진, 연구실, 의국, 카페테리아에서 관계를 쌓아 보세요.
-        </div>
-      </div>
-
-      <div class="play-card">
-        <small>03</small>
-        <div class="play-card-title">🌙 당직실</div>
-        <div class="play-card-text">
-          늦은 밤, 당직 중에 마주치거나 업무가 끝난 뒤 대화를 시작해 보세요.
-        </div>
-      </div>
-
-      <div class="play-card">
-        <small>04</small>
-        <div class="play-card-title">❤️ 합동 수술</div>
-        <div class="play-card-text">
-          수술실에서 평소 부딪히던 사람의 판단과 실력을 확인해 보세요.
-        </div>
-      </div>
-
-      <div class="play-card">
-        <small>05</small>
-        <div class="play-card-title">✈️ 가운 밖</div>
-        <div class="play-card-text">
-          학회, 퇴근 후 식사처럼 의사라는 역할에서 벗어난 모습을 만나 보세요.
-        </div>
-      </div>
-
-      <div class="play-card">
-        <small>06</small>
-        <div class="play-card-title">💬 거리 정하기</div>
-        <div class="play-card-text">
-          다가가도, 선을 그어도 됩니다. 관계는 대화에 따라 달라집니다.
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section class="section section-light">
-  <div class="wrap">
-
-    <div class="access-layout">
-
       <div>
-        <div class="section-title-block">
-          <small>MEDICAL RECORD ACCESS</small>
-          <h2 class="access-title">진료기록열람하기</h2>
-        </div>
-
-        <div class="access-copy">
-          원하는 플랫폼에서 이야기를 시작하세요.
-        </div>
+        <div class="section-code">02 / MEDICAL STAFF</div>
+        <h2 class="section-title">의료진 소개</h2>
       </div>
-
-      <div class="access-list">
-
-        <a
-          class="access-button"
-          href="https://tikita.ai/ko/story/NTFMLUDK?referrer=Z7272W"
-          target="_blank"
-          rel="noopener">
-          <div>
-            <strong>티키타에서 열람하기</strong>
-            <small>TIKITA · OPEN RECORD</small>
-          </div>
-          <div class="access-arrow">→</div>
-        </a>
-
-        <a
-          class="access-button"
-          href="여기에_유니챗_URL"
-          target="_blank"
-          rel="noopener">
-          <div>
-            <strong>유니챗에서 열람하기</strong>
-            <small>UNICHAT · OPEN RECORD</small>
-          </div>
-          <div class="access-arrow">→</div>
-        </a>
-
-        <a
-          class="access-button"
-          href="여기에_크랙_URL"
-          target="_blank"
-          rel="noopener">
-          <div>
-            <strong>크랙에서 열람하기</strong>
-            <small>CRACK · OPEN RECORD</small>
-          </div>
-          <div class="access-arrow">→</div>
-        </a>
-
-      </div>
-
+      <div class="scroll-hint">좌우로 넘겨보세요 →</div>
     </div>
-
+    <div class="staff-rail">
+      <article class="staff-card">
+        <div class="staff-top"><span>STAFF IDENTIFICATION</span><span>OB/GYN</span></div>
+        <div class="staff-photo"><img src="https://auth.tikita.ai/storage/v1/object/public/avatars/character-library/c5a099f7-a393-4775-b04f-bee979837480/user-9482275b-5719-4316-a93e-f41c7307f2ba.webp" alt="권태하"></div>
+        <div class="staff-body">
+          <div class="staff-dept">OBSTETRICS &amp; GYNECOLOGY</div>
+          <div class="staff-name-line"><div class="staff-name">권태하</div></div>
+          <div class="staff-en">KWON TAEHA</div>
+          <div class="staff-spec"><span class="spec">30세</span><span class="spec">185cm</span><span class="spec">산부인과 전문의</span></div>
+          <div class="staff-summary">단정한 흑발과 깊은 눈빛의 차가운 인상. 침착하고 여유로우며 <strong>필요한 순간 조용히 먼저 챙기는 타입.</strong></div>
+          <div class="relation-box">
+            <div class="relation-title">RELATION</div>
+            <div class="relation-row"><b>차도희</b><span>마주칠 때마다 부딪히는 비뇨기과 교수.</span></div>
+            <div class="relation-row"><b>윤시우</b><span>같은 병원에서 근무하는 마취통증의학과 교수.</span></div>
+          </div>
+        </div>
+      </article>
+      <article class="staff-card">
+        <div class="staff-top"><span>STAFF IDENTIFICATION</span><span>ANESTH.</span></div>
+        <div class="staff-photo"><img src="https://auth.tikita.ai/storage/v1/object/public/avatars/character-library/c5a099f7-a393-4775-b04f-bee979837480/user-2d5d1340-c928-4a60-8e97-b0f9a3926dab.webp" alt="윤시우"></div>
+        <div class="staff-body">
+          <div class="staff-dept">ANESTHESIOLOGY</div>
+          <div class="staff-name-line"><div class="staff-name">윤시우</div></div>
+          <div class="staff-en">YOON SIWOO</div>
+          <div class="staff-spec"><span class="spec">30세</span><span class="spec">183cm</span><span class="spec">마취통증의학과 교수</span></div>
+          <div class="staff-summary">서글서글한 미소의 강아지상 미남. 누구에게나 자상하고 매너가 좋으며 <strong>차도희에게는 가장 오래되고 익숙한 사람.</strong></div>
+          <div class="relation-box">
+            <div class="relation-title">RELATION</div>
+            <div class="relation-row"><b>차도희</b><span>중학교 시절부터 함께한 오랜 소꿉친구.</span></div>
+            <div class="relation-row"><b>권태하</b><span>같은 병원에서 근무하는 산부인과 전문의.</span></div>
+          </div>
+        </div>
+      </article>
+      <article class="staff-card">
+        <div class="staff-top"><span>STAFF IDENTIFICATION</span><span>UROLOGY</span></div>
+        <div class="staff-photo"><img src="https://i.ibb.co/VWXSdrWs/user-0be67096-50ba-48fb-8551-564d374910c8.webp" alt="차도희"></div>
+        <div class="staff-body">
+          <div class="staff-dept">UROLOGY</div>
+          <div class="staff-name-line"><div class="staff-name">차도희</div><div class="staff-you">(당신)</div></div>
+          <div class="staff-en">PLAYER CHARACTER</div>
+          <div class="staff-spec"><span class="spec">비뇨기과</span><span class="spec">교수</span><span class="spec">PLAYER</span></div>
+          <div class="staff-summary">성운대 메디컬 센터 비뇨기과 교수. 업무와 판단을 중시하며 <strong>냉정하고 정확한 기준을 가진 의사.</strong></div>
+          <div class="relation-box">
+            <div class="relation-title">RELATION</div>
+            <div class="relation-row"><b>권태하</b><span>실력은 인정하지만 자주 부딪히는 동료.</span></div>
+            <div class="relation-row"><b>윤시우</b><span>어린 시절부터 함께한 가장 오래된 친구.</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
-
-
+<section class="case-section section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-code">03 / CASE FILE</div>
+        <h2 class="section-title">Case File</h2>
+      </div>
+    </div>
+    <div class="case-list">
+      <div class="case-row"><div class="case-no">01</div><div class="case-name">앙숙의 시작</div><div class="case-desc">산부인과 권태하와 비뇨기과 당신. 첫 만남부터 서로의 방식이 마음에 들지 않는다.</div></div>
+      <div class="case-row"><div class="case-no">02</div><div class="case-name">갑작스러운 단둘만의 학회</div><div class="case-desc">예정과 달리 둘만 남게 된 학회 일정. 병원 밖에서 서로를 길게 마주한다.</div></div>
+      <div class="case-row"><div class="case-no">03</div><div class="case-name">멈춰 선 폭우 속의 당직실</div><div class="case-desc">폭우가 쏟아지는 밤. 병원을 떠나지 못한 두 사람이 당직실에서 다시 마주친다.</div></div>
+      <div class="case-row"><div class="case-no">04</div><div class="case-name">도망치는 여자, 잡지 않는 남자</div><div class="case-desc">당신은 거리를 두려 하지만 권태하는 억지로 붙잡지 않는다.</div></div>
+      <div class="case-row"><div class="case-no">05</div><div class="case-name">고난이도 합동 수술</div><div class="case-desc">가장 냉정해야 하는 수술실. 두 사람이 서로의 판단과 실력을 믿어야 한다.</div></div>
+    </div>
+  </div>
+</section>
+<section class="play-section section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-code">04 / PLAY GUIDE</div>
+        <h2 class="section-title">추천 플레이</h2>
+      </div>
+    </div>
+    <div class="play-intro">병원에서 벌어지는 다양한 상황을 직접 만들어보세요. 대화와 선택에 따라 관계가 달라집니다.</div>
+    <div class="play-grid">
+      <div class="play-card"><div class="play-no">01</div><div class="play-title">🩺 진료와 협진</div><div class="play-text">환자 케이스를 두고 권태하와 의견을 나눠보세요.</div></div>
+      <div class="play-card"><div class="play-no">02</div><div class="play-title">🏥 병원 일상</div><div class="play-text">외래, 회진, 연구실과 의국에서 관계를 쌓아보세요.</div></div>
+      <div class="play-card"><div class="play-no">03</div><div class="play-title">🌙 당직실</div><div class="play-text">늦은 밤 당직실에서 평소와 다른 대화를 시작해보세요.</div></div>
+      <div class="play-card"><div class="play-no">04</div><div class="play-title">❤️ 합동 수술</div><div class="play-text">수술실에서 상대의 판단과 실력을 확인해보세요.</div></div>
+      <div class="play-card"><div class="play-no">05</div><div class="play-title">✈️ 가운 밖</div><div class="play-text">학회와 퇴근 후 일정에서 다른 모습을 만나보세요.</div></div>
+      <div class="play-card"><div class="play-no">06</div><div class="play-title">💬 거리 정하기</div><div class="play-text">다가가거나 선을 그으며 원하는 관계를 만들어보세요.</div></div>
+    </div>
+  </div>
+</section>
+<section class="access-section section-light">
+  <div class="wrap">
+    <div class="access-layout">
+      <div>
+        <div class="access-code">MEDICAL RECORD ACCESS</div>
+        <h2 class="access-title">진료기록 열람하기</h2>
+        <div class="access-copy">원하는 플랫폼에서 이야기를 시작하세요.</div>
+      </div>
+      <div class="access-buttons">
+        <a class="access-button" href="https://tikita.ai/ko/story/NTFMLUDK?referrer=Z7272W" target="_blank" rel="noopener"><div><strong>티키타에서 열람하기</strong><small>TIKITA · OPEN RECORD</small></div><div class="access-arrow">→</div></a>
+        <a class="access-button" href="https://www.univers.chat/character/0d3dd5a0-578f-4964-93fb-5b7cbcfbd1d9" target="_blank" rel="noopener"><div><strong>유니챗에서 열람하기</strong><small>UNICHAT · OPEN RECORD</small></div><div class="access-arrow">→</div></a>
+        <a class="access-button" href="https://share.crack.wrtn.ai/au1kor" target="_blank" rel="noopener"><div><strong>크랙에서 열람하기</strong><small>CRACK · OPEN RECORD</small></div><div class="access-arrow">→</div></a>
+      </div>
+    </div>
+  </div>
+</section>
 <footer class="footer">
   <div class="footer-code">SEONGWOON UNIVERSITY MEDICAL CENTER</div>
   <div class="footer-main">© 2026 아몬드송송 · ALL RIGHTS RESERVED</div>
-  <div class="footer-text">
-    본 작품의 세계관 · 캐릭터 설정 · 스토리 · 창작 요소 및
-    HTML 구조 · 레이아웃 · 디자인의 무단 복제, 도용, 변형 및 재배포를 금합니다.
-  </div>
+  <div class="footer-text">본 작품의 세계관 · 캐릭터 설정 · 스토리 · 창작 요소 및 HTML 구조 · 레이아웃 · 디자인의 무단 복제, 도용, 변형 및 재배포를 금합니다.</div>
 </footer>
-
 </body>
 </html>
