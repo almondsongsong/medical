@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>아래쪽은 다 압니다만</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  min-width:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  width:100%;
+  overflow-x:hidden;
+
+  background:#11251f;
+  color:#e8efeb;
+
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  width:100%;
+}
+
+:root{
+  --white:#f4f5f1;
+  --paper:#ffffff;
+
+  --green:#11251f;
+  --green2:#18332a;
+  --green3:#22463a;
+
+  --text:#17201d;
+  --soft:#596963;
+  --muted:#77857f;
+
+  --darktext:#e8efeb;
+  --darksoft:#a4b6af;
+
+  --line:#cfd7d2;
+  --darkline:#304a40;
+}
+
+
+/* ==================================================
+   COMMON
+================================================== */
+
+.wrap{
+  width:min(1180px,calc(100% - 70px));
+  margin:0 auto;
+}
+
+.section{
+  padding:72px 0;
+}
+
+.section-light{
+  background:var(--white);
+  color:var(--text);
+}
+
+.section-green{
+  background:var(--green);
+  color:var(--darktext);
+}
+
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  gap:30px;
+  margin-bottom:30px;
+}
+
+.section-code{
+  margin-bottom:6px;
+
+  color:#71817b;
+
+  font-family:Consolas,monospace;
+
+  font-size:8px;
+  letter-spacing:2px;
+}
+
+.section-green .section-code{
+  color:#78988c;
+}
+
+.section-title{
+  margin:0;
+
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+
+  font-size:30px;
+  font-weight:700;
+
+  line-height:1.3;
+  letter-spacing:-1px;
+}
+
+.section-sub{
+  max-width:340px;
+
+  color:#7b8984;
+
+  font-size:10px;
+  line-height:1.7;
+
+  text-align:right;
+}
+
+.section-green .section-sub{
+  color:#82978f;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.hospital-header{
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:
+    0
+    max(20px,env(safe-area-inset-right))
+    0
+    max(20px,env(safe-area-inset-left));
+
+  background:#08130f;
+
+  border-bottom:1px solid #294137;
+
+  color:#dce8e3;
+}
+
+.hospital-left{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.cross{
+  width:27px;
+  height:27px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #6b9485;
+
+  color:#9dc0b4;
+
+  font-size:15px;
+}
+
+.hospital-name{
+  font-size:9px;
+  font-weight:800;
+
+  letter-spacing:1px;
+}
+
+.hospital-en{
+  margin-top:2px;
+
+  color:#687f77;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+  letter-spacing:1.2px;
+}
+
+.system-status{
+  color:#6e9185;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  letter-spacing:1px;
+}
+
+
+/* ==================================================
+   HERO / GREEN
+================================================== */
+
+.hero{
+  min-height:650px;
+
+  display:flex;
+  align-items:center;
+
+  background:
+    radial-gradient(
+      circle at 80% 18%,
+      rgba(126,169,154,.09),
+      transparent 30%
+    ),
+    linear-gradient(
+      rgba(255,255,255,.016) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.016) 1px,
+      transparent 1px
+    ),
+    #11251f;
+
+  background-size:
+    auto,
+    46px 46px,
+    46px 46px,
+    auto;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+
+  gap:75px;
+  align-items:center;
+}
+
+.hero-code{
+  color:#77998d;
+
+  font-family:Consolas,monospace;
+
+  font-size:8px;
+  font-weight:700;
+
+  letter-spacing:2.4px;
+}
+
+.hero h1{
+  margin:22px 0 0;
+
+  color:#f1f5f3;
+
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+
+  font-size:clamp(49px,7vw,82px);
+  font-weight:700;
+
+  line-height:1.1;
+  letter-spacing:-4px;
+}
+
+.hero-copy{
+  max-width:610px;
+
+  margin-top:28px;
+
+  color:#a8bab3;
+
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+
+  font-size:17px;
+  line-height:1.95;
+}
+
+.hero-copy strong{
+  color:#d8e7e1;
+  font-weight:700;
+}
+
+
+/* ==================================================
+   HERO DIRECTORY
+================================================== */
+
+.directory{
+  background:#f7f8f5;
+
+  border:1px solid #78988c;
+
+  box-shadow:0 20px 50px rgba(0,0,0,.17);
+
+  color:#17201d;
+}
+
+.directory-head{
+  padding:14px 17px;
+
+  background:#dfe8e3;
+
+  color:#345b4c;
+
+  font-family:Consolas,monospace;
+
+  font-size:8px;
+  font-weight:700;
+
+  letter-spacing:1.8px;
+}
+
+.directory-row{
+  display:grid;
+  grid-template-columns:100px 1fr;
+
+  border-bottom:1px solid #d1d9d5;
+}
+
+.directory-key{
+  padding:12px 13px;
+
+  background:#edf1ee;
+
+  color:#6a7872;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  letter-spacing:1px;
+}
+
+.directory-value{
+  padding:12px 14px;
+
+  color:#26352f;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.department-bar{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  border-top:3px solid #426f5d;
+}
+
+.department{
+  padding:15px 7px;
+
+  border-right:1px solid #d1d9d5;
+
+  text-align:center;
+}
+
+.department:last-child{
+  border-right:0;
+}
+
+.department span{
+  display:block;
+
+  color:#74827d;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+  letter-spacing:1px;
+}
+
+.department strong{
+  display:block;
+
+  margin-top:5px;
+
+  color:#244438;
+
+  font-size:9px;
+}
+
+
+/* ==================================================
+   STORY / WHITE
+================================================== */
+
+.story-layout{
+  display:grid;
+  grid-template-columns:230px 1fr;
+
+  gap:55px;
+}
+
+.story-data{
+  border-top:1px solid #7c9188;
+}
+
+.story-data-row{
+  padding:13px 0;
+
+  border-bottom:1px solid #d0d8d3;
+}
+
+.story-data-row span{
+  display:block;
+
+  color:#7a8a84;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  letter-spacing:1px;
+}
+
+.story-data-row strong{
+  display:block;
+
+  margin-top:4px;
+
+  color:#294a3d;
+
+  font-size:10px;
+}
+
+.story-body{
+  max-width:750px;
+
+  color:#57665f;
+
+  font-size:13px;
+  line-height:2;
+}
+
+.story-body p{
+  margin:0 0 20px;
+}
+
+.story-body strong{
+  color:#214f3e;
+}
+
+.story-quote{
+  margin-top:27px;
+  padding:18px 21px;
+
+  background:#e4ebe7;
+
+  border-left:2px solid #527d6d;
+
+  color:#28493d;
+
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+
+/* ==================================================
+   STAFF HORIZONTAL SCROLL
+================================================== */
+
+.scroll-hint{
+  display:flex;
+  align-items:center;
+  gap:7px;
+
+  color:#789187;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  letter-spacing:1px;
+}
+
+.horizontal-rail{
+  display:flex;
+  gap:16px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  padding:2px 2px 14px;
+
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+.horizontal-rail::-webkit-scrollbar{
+  height:5px;
+}
+
+.horizontal-rail::-webkit-scrollbar-track{
+  background:#1b3028;
+}
+
+.horizontal-rail::-webkit-scrollbar-thumb{
+  background:#6c9485;
+}
+
+
+/* ==================================================
+   MEDICAL STAFF / GREEN
+================================================== */
+
+.staff-card{
+  flex:0 0 min(390px,84vw);
+
+  scroll-snap-align:start;
+
+  background:#f8f9f6;
+
+  border:1px solid #456255;
+
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+  color:#17201d;
+}
+
+.staff-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:9px 12px;
+
+  background:#1e4436;
+
+  color:#bed4cc;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+  letter-spacing:1.3px;
+}
+
+.staff-photo{
+  height:285px;
+
+  overflow:hidden;
+
+  background:#e1e7e3;
+}
+
+.staff-photo img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.staff-photo.user-profile{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      rgba(25,70,54,.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(25,70,54,.045) 1px,
+      transparent 1px
+    ),
+    #e9eeeb;
+
+  background-size:28px 28px;
+}
+
+.user-profile-inner{
+  text-align:center;
+}
+
+.user-profile-icon{
+  width:68px;
+  height:68px;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #84a095;
+  border-radius:50%;
+
+  color:#496c5f;
+
+  font-family:Consolas,monospace;
+
+  font-size:18px;
+}
+
+.user-profile-text{
+  margin-top:10px;
+
+  color:#83938c;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  letter-spacing:1.5px;
+}
+
+.staff-body{
+  padding:18px;
+}
+
+.staff-dept{
+  color:#658377;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  font-weight:700;
+
+  letter-spacing:1.5px;
+}
+
+.staff-name-line{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+
+  margin-top:6px;
+}
+
+.staff-name{
+  color:#192821;
+
+  font-size:23px;
+  font-weight:850;
+}
+
+.staff-you{
+  color:#697d74;
+
+  font-size:13px;
+  font-weight:700;
+}
+
+.staff-en{
+  margin-top:2px;
+
+  color:#87938e;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+  letter-spacing:1.2px;
+}
+
+.staff-spec{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:5px;
+
+  margin-top:12px;
+}
+
+.spec{
+  padding:4px 7px;
+
+  background:#edf1ee;
+
+  border:1px solid #d1dad5;
+
+  color:#5b6f66;
+
+  font-size:8px;
+  font-weight:700;
+}
+
+.staff-summary{
+  margin-top:14px;
+
+  color:#56645f;
+
+  font-size:10px;
+  line-height:1.7;
+}
+
+.staff-summary strong{
+  color:#254d3f;
+}
+
+.relation-box{
+  margin-top:14px;
+  padding-top:12px;
+
+  border-top:1px solid #d7ddd9;
+}
+
+.relation-title{
+  color:#799087;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+  font-weight:700;
+
+  letter-spacing:1.5px;
+}
+
+.relation-row{
+  display:grid;
+  grid-template-columns:66px 1fr;
+
+  gap:7px;
+
+  margin-top:7px;
+
+  font-size:8px;
+  line-height:1.5;
+}
+
+.relation-row b{
+  color:#3d6657;
+}
+
+.relation-row span{
+  color:#69766f;
+}
+
+
+/* ==================================================
+   CASE FILE / WHITE
+   세로 목록형
+================================================== */
+
+.case-section{
+  padding:58px 0;
+}
+
+.case-section .section-head{
+  margin-bottom:20px;
+}
+
+.case-list{
+  border-top:1px solid #8fa097;
+}
+
+.case-row{
+  display:grid;
+  grid-template-columns:70px 170px 1fr 90px;
+
+  align-items:center;
+
+  min-height:82px;
+
+  border-bottom:1px solid #d4dbd7;
+
+  background:#f8f9f6;
+}
+
+.case-no{
+  padding:15px;
+
+  color:#45695b;
+
+  font-family:Consolas,monospace;
+
+  font-size:18px;
+}
+
+.case-title{
+  padding:15px 16px;
+
+  border-left:1px solid #d5ddd8;
+
+  color:#1f352c;
+
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+
+  font-size:12px;
+  font-weight:700;
+
+  line-height:1.45;
+}
+
+.case-desc{
+  padding:15px 18px;
+
+  border-left:1px solid #d5ddd8;
+
+  color:#68766f;
+
+  font-size:8px;
+  line-height:1.6;
+}
+
+.case-tag{
+  padding:15px 10px;
+
+  border-left:1px solid #d5ddd8;
+
+  color:#7a8c84;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+
+  text-align:center;
+}
+
+
+/* ==================================================
+   PLAY GUIDE / GREEN
+   한 줄 고정형
+================================================== */
+
+.play-section{
+  padding:38px 0;
+}
+
+.play-section .section-head{
+  margin-bottom:12px;
+}
+
+.play-intro{
+  margin:0 0 12px;
+
+  color:#8ea097;
+
+  font-size:8px;
+  line-height:1.5;
+}
+
+.play-line{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+
+  border-top:1px solid #426055;
+  border-bottom:1px solid #426055;
+}
+
+.play-item{
+  padding:10px 11px;
+
+  background:#172d26;
+
+  border-right:1px solid #304b40;
+}
+
+.play-item:last-child{
+  border-right:0;
+}
+
+.play-number{
+  color:#677f75;
+
+  font-family:Consolas,monospace;
+
+  font-size:5.5px;
+}
+
+.play-title{
+  margin-top:6px;
+
+  color:#e0e9e5;
+
+  font-size:8.5px;
+  font-weight:800;
+
+  white-space:nowrap;
+}
+
+.play-title span{
+  margin-right:3px;
+}
+
+.play-text{
+  margin-top:4px;
+
+  color:#8fa198;
+
+  font-size:6.8px;
+  line-height:1.45;
+}
+
+
+/* ==================================================
+   ACCESS / WHITE
+================================================== */
+
+.access-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+
+  gap:70px;
+  align-items:center;
+}
+
+.access-code{
+  color:#71817b;
+
+  font-family:Consolas,monospace;
+
+  font-size:7px;
+  letter-spacing:2px;
+}
+
+.access-title{
+  margin:13px 0 0;
+
+  color:#1b3028;
+
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+
+  font-size:32px;
+  font-weight:700;
+}
+
+.access-copy{
+  margin-top:11px;
+
+  color:#74827c;
+
+  font-size:10px;
+}
+
+.access-buttons{
+  display:grid;
+  gap:8px;
+}
+
+.access-button{
+  display:grid;
+  grid-template-columns:1fr auto;
+
+  align-items:center;
+
+  padding:14px 16px;
+
+  background:#fff;
+
+  border:1px solid #ccd5d0;
+
+  transition:.2s;
+}
+
+.access-button:hover{
+  transform:translateX(4px);
+
+  border-color:#69877b;
+}
+
+.access-button strong{
+  display:block;
+
+  color:#29473b;
+
+  font-size:10px;
+}
+
+.access-button small{
+  display:block;
+
+  margin-top:3px;
+
+  color:#7b8984;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+}
+
+.access-arrow{
+  color:#527768;
+
+  font-size:12px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer{
+  padding:
+    32px
+    20px
+    calc(32px + env(safe-area-inset-bottom));
+
+  background:#08110e;
+
+  border-top:1px solid #273c34;
+
+  text-align:center;
+}
+
+.footer-code{
+  color:#536c62;
+
+  font-family:Consolas,monospace;
+
+  font-size:6px;
+  letter-spacing:2px;
+}
+
+.footer-main{
+  margin-top:8px;
+
+  color:#83998f;
+
+  font-size:9px;
+  font-weight:700;
+}
+
+.footer-text{
+  margin-top:7px;
+
+  color:#52665e;
+
+  font-size:7px;
+  line-height:1.8;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:900px){
+
+  .wrap{
+    width:100%;
+
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:65px 0;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .story-layout{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .story-data{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .story-data-row{
+    padding:11px 9px;
+    border-right:1px solid #d0d8d3;
+  }
+
+  .case-row{
+    grid-template-columns:55px 150px 1fr;
+  }
+
+  .case-tag{
+    display:none;
+  }
+
+  .play-line{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .play-item:nth-child(3){
+    border-right:0;
+  }
+
+  .play-item:nth-child(-n+3){
+    border-bottom:1px solid #304b40;
+  }
+
+  .access-layout{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:620px){
+
+  .hospital-header{
+    height:49px;
+  }
+
+  .system-status{
+    display:none;
+  }
+
+  .wrap{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .section{
+    padding:50px 0;
+  }
+
+  .section-head{
+    display:block;
+    margin-bottom:22px;
+  }
+
+  .section-title{
+    font-size:24px;
+  }
+
+  .section-sub{
+    margin-top:8px;
+    text-align:left;
+  }
+
+  .hero{
+    padding:52px 0;
+  }
+
+  .hero h1{
+    font-size:39px;
+    letter-spacing:-2px;
+  }
+
+  .hero-copy{
+    font-size:14px;
+  }
+
+  .directory-row{
+    grid-template-columns:90px 1fr;
+  }
+
+  .story-data{
+    grid-template-columns:1fr;
+  }
+
+  .story-data-row{
+    border-right:0;
+  }
+
+  .story-body{
+    font-size:12px;
+  }
+
+  .staff-card{
+    flex-basis:82vw;
+  }
+
+  .staff-photo{
+    height:255px;
+  }
+
+  .case-section{
+    padding:44px 0;
+  }
+
+  .case-row{
+    grid-template-columns:48px 1fr;
+    min-height:auto;
+  }
+
+  .case-no{
+    align-self:stretch;
+
+    display:flex;
+    align-items:center;
+
+    padding:13px 10px;
+
+    border-right:1px solid #d5ddd8;
+  }
+
+  .case-title{
+    border-left:0;
+
+    padding:13px;
+  }
+
+  .case-desc{
+    grid-column:1 / -1;
+
+    padding:10px 13px 13px;
+
+    border-left:0;
+    border-top:1px solid #e0e5e2;
+  }
+
+  .play-section{
+    padding:34px 0;
+  }
+
+  .play-line{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .play-item{
+    border-bottom:1px solid #304b40;
+  }
+
+  .play-item:nth-child(3){
+    border-right:1px solid #304b40;
+  }
+
+  .play-item:nth-child(2n){
+    border-right:0;
+  }
+
+  .play-item:nth-last-child(-n+2){
+    border-bottom:0;
+  }
+
+  .access-title{
+    font-size:27px;
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  .wrap{
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  .hero h1{
+    font-size:35px;
+  }
+
+  .staff-card{
+    flex-basis:86vw;
+  }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="hospital-header">
+
+  <div class="hospital-left">
+
+    <div class="cross">
+      +
+    </div>
+
+    <div>
+
+      <div class="hospital-name">
+        성운대 메디컬 센터
+      </div>
+
+      <div class="hospital-en">
+        SEONGWOON UNIVERSITY MEDICAL CENTER
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="system-status">
+    INTERNAL MEDICAL SYSTEM · ONLINE
+  </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     HERO / GREEN
+================================================== -->
+
+<section class="hero">
+
+  <div class="wrap">
+
+    <div class="hero-grid">
+
+
+      <div>
+
+        <div class="hero-code">
+          OB/GYN × UROLOGY · MEDICAL ROMANCE
+        </div>
+
+        <h1>
+          아래쪽은<br>
+          다 압니다만
+        </h1>
+
+        <div class="hero-copy">
+          산부인과 남자와 비뇨기과 여자.<br>
+          사람의 몸은 누구보다 잘 아는 두 의사가<br>
+          <strong>정작 서로의 마음만큼은 쉽게 읽지 못한다.</strong>
+        </div>
+
+      </div>
+
+
+      <div class="directory">
+
+        <div class="directory-head">
+          SEONGWOON MEDICAL DIRECTORY
+        </div>
+
+        <div class="directory-row">
+          <div class="directory-key">LOCATION</div>
+          <div class="directory-value">성운대 메디컬 센터</div>
+        </div>
+
+        <div class="directory-row">
+          <div class="directory-key">GENRE</div>
+          <div class="directory-value">메디컬 · 오피스 · 어른 로맨스</div>
+        </div>
+
+        <div class="directory-row">
+          <div class="directory-key">FIELD</div>
+          <div class="directory-value">산부인과 · 비뇨기과 · 마취통증의학과</div>
+        </div>
+
+
+        <div class="department-bar">
+
+          <div class="department">
+            <span>OB/GYN</span>
+            <strong>권태하</strong>
+          </div>
+
+          <div class="department">
+            <span>ANESTH.</span>
+            <strong>윤시우</strong>
+          </div>
+
+          <div class="department">
+            <span>UROLOGY</span>
+            <strong>차도희</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     STORY / WHITE
+================================================== -->
+
+<section class="section section-light">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="section-code">
+          01 / STORY
+        </div>
+
+        <h2 class="section-title">
+          성운대 메디컬 센터
+        </h2>
+
+      </div>
+
+      <div class="section-sub">
+        대학병원을 배경으로 펼쳐지는<br>
+        세 의료진의 메디컬 로맨스.
+      </div>
+
+    </div>
+
+
+    <div class="story-layout">
+
+
+      <div class="story-data">
+
+        <div class="story-data-row">
+          <span>LOCATION</span>
+          <strong>성운대 메디컬 센터</strong>
+        </div>
+
+        <div class="story-data-row">
+          <span>MAIN</span>
+          <strong>산부인과 × 비뇨기과</strong>
+        </div>
+
+        <div class="story-data-row">
+          <span>SUPPORT</span>
+          <strong>마취통증의학과</strong>
+        </div>
+
+      </div>
+
+
+      <div class="story-body">
+
+        <p>
+          대한민국 최고 권위의 대학병원
+          <strong>성운대 메디컬 센터.</strong>
+        </p>
+
+        <p>
+          산부인과 전문의 권태하와
+          비뇨기과 교수인 당신은
+          업무 영역은 가깝지만 만나기만 하면 부딪히는 사이.
+        </p>
+
+        <p>
+          그리고 당신의 곁에는
+          오랜 시간 함께해 온 마취통증의학과 교수
+          윤시우가 있다.
+        </p>
+
+        <div class="story-quote">
+          수술실에서는 누구보다 냉정한 의사들.<br>
+          하지만 가운을 벗은 뒤의 관계까지 명확한 것은 아니다.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     MEDICAL STAFF / GREEN
+================================================== -->
+
+<section class="section section-green">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="section-code">
+          02 / MEDICAL STAFF
+        </div>
+
+        <h2 class="section-title">
+          의료진 소개
+        </h2>
+
+      </div>
+
+      <div class="scroll-hint">
+        좌우로 넘겨보세요 →
+      </div>
+
+    </div>
+
+
+    <div class="horizontal-rail">
+
+
+      <!-- 권태하 -->
+
+      <article class="staff-card">
+
+        <div class="staff-card-top">
+          <span>STAFF IDENTIFICATION</span>
+          <span>OB/GYN</span>
+        </div>
+
+        <div class="staff-photo">
+
+          <img
+            src="https://auth.tikita.ai/storage/v1/object/public/avatars/character-library/c5a099f7-a393-4775-b04f-bee979837480/user-9482275b-5719-4316-a93e-f41c7307f2ba.webp"
+            alt="권태하">
+
+        </div>
+
+        <div class="staff-body">
+
+          <div class="staff-dept">
+            OBSTETRICS &amp; GYNECOLOGY
+          </div>
+
+          <div class="staff-name-line">
+            <div class="staff-name">권태하</div>
+          </div>
+
+          <div class="staff-en">
+            KWON TAEHA
+          </div>
+
+          <div class="staff-spec">
+            <span class="spec">30세</span>
+            <span class="spec">185cm</span>
+            <span class="spec">산부인과 전문의</span>
+          </div>
+
+          <div class="staff-summary">
+            단정한 흑발과 깊은 눈빛의 차가운 인상.
+            침착하고 여유로우며
+            <strong>필요한 순간 조용히 먼저 챙기는 타입.</strong>
+          </div>
+
+          <div class="relation-box">
+
+            <div class="relation-title">
+              RELATION
+            </div>
+
+            <div class="relation-row">
+              <b>차도희</b>
+              <span>마주칠 때마다 부딪히는 비뇨기과 교수.</span>
+            </div>
+
+            <div class="relation-row">
+              <b>윤시우</b>
+              <span>같은 병원에서 근무하는 마취통증의학과 교수.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 윤시우 -->
+
+      <article class="staff-card">
+
+        <div class="staff-card-top">
+          <span>STAFF IDENTIFICATION</span>
+          <span>ANESTH.</span>
+        </div>
+
+        <div class="staff-photo">
+
+          <img
+            src="https://auth.tikita.ai/storage/v1/object/public/avatars/character-library/c5a099f7-a393-4775-b04f-bee979837480/user-2d5d1340-c928-4a60-8e97-b0f9a3926dab.webp"
+            alt="윤시우">
+
+        </div>
+
+        <div class="staff-body">
+
+          <div class="staff-dept">
+            ANESTHESIOLOGY
+          </div>
+
+          <div class="staff-name-line">
+            <div class="staff-name">윤시우</div>
+          </div>
+
+          <div class="staff-en">
+            YOON SIWOO
+          </div>
+
+          <div class="staff-spec">
+            <span class="spec">30세</span>
+            <span class="spec">183cm</span>
+            <span class="spec">마취통증의학과 교수</span>
+          </div>
+
+          <div class="staff-summary">
+            서글서글한 미소의 강아지상 미남.
+            누구에게나 자상하고 매너가 좋으며
+            <strong>차도희에게는 가장 오래되고 익숙한 사람.</strong>
+          </div>
+
+          <div class="relation-box">
+
+            <div class="relation-title">
+              RELATION
+            </div>
+
+            <div class="relation-row">
+              <b>차도희</b>
+              <span>중학교 시절부터 함께한 오랜 소꿉친구.</span>
+            </div>
+
+            <div class="relation-row">
+              <b>권태하</b>
+              <span>같은 병원에서 근무하는 산부인과 전문의.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 차도희 -->
+
+      <article class="staff-card">
+
+        <div class="staff-card-top">
+          <span>STAFF IDENTIFICATION</span>
+          <span>UROLOGY</span>
+        </div>
+
+        <div class="staff-photo user-profile">
+
+          <div class="user-profile-inner">
+
+            <div class="user-profile-icon">
+              URO
+            </div>
+
+            <div class="user-profile-text">
+              PLAYER CHARACTER
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="staff-body">
+
+          <div class="staff-dept">
+            UROLOGY
+          </div>
+
+          <div class="staff-name-line">
+
+            <div class="staff-name">
+              차도희
+            </div>
+
+            <div class="staff-you">
+              (당신)
+            </div>
+
+          </div>
+
+          <div class="staff-en">
+            PLAYER CHARACTER
+          </div>
+
+          <div class="staff-spec">
+            <span class="spec">비뇨기과</span>
+            <span class="spec">교수</span>
+            <span class="spec">PLAYER</span>
+          </div>
+
+          <div class="staff-summary">
+            성운대 메디컬 센터 비뇨기과 교수.
+            업무와 사생활의 경계를 분명히 하며
+            <strong>냉정하고 정확한 판단을 중시한다.</strong>
+          </div>
+
+          <div class="relation-box">
+
+            <div class="relation-title">
+              RELATION
+            </div>
+
+            <div class="relation-row">
+              <b>권태하</b>
+              <span>실력은 인정하지만 자주 부딪히는 동료.</span>
+            </div>
+
+            <div class="relation-row">
+              <b>윤시우</b>
+              <span>어린 시절부터 함께한 가장 오래된 친구.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CASE FILE / WHITE
+================================================== -->
+
+<section class="section section-light case-section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="section-code">
+          03 / CASE FILE
+        </div>
+
+        <h2 class="section-title">
+          Case File
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="case-list">
+
+
+      <div class="case-row">
+
+        <div class="case-no">
+          01
+        </div>
+
+        <div class="case-title">
+          앙숙의 시작
+        </div>
+
+        <div class="case-desc">
+          산부인과 권태하와 비뇨기과 당신.
+          첫 만남부터 서로의 방식이 마음에 들지 않는다.
+        </div>
+
+        <div class="case-tag">
+          FIRST CONTACT
+        </div>
+
+      </div>
+
+
+      <div class="case-row">
+
+        <div class="case-no">
+          02
+        </div>
+
+        <div class="case-title">
+          갑작스러운 단둘만의 학회
+        </div>
+
+        <div class="case-desc">
+          예정과 달리 둘만 남게 된 학회 일정.
+          병원 밖에서 서로를 길게 마주한다.
+        </div>
+
+        <div class="case-tag">
+          CONFERENCE
+        </div>
+
+      </div>
+
+
+      <div class="case-row">
+
+        <div class="case-no">
+          03
+        </div>
+
+        <div class="case-title">
+          멈춰 선 폭우 속의 당직실
+        </div>
+
+        <div class="case-desc">
+          폭우가 쏟아지는 밤.
+          병원을 떠나지 못한 두 사람이 당직실에서 다시 마주친다.
+        </div>
+
+        <div class="case-tag">
+          NIGHT DUTY
+        </div>
+
+      </div>
+
+
+      <div class="case-row">
+
+        <div class="case-no">
+          04
+        </div>
+
+        <div class="case-title">
+          도망치는 여자, 잡지 않는 남자
+        </div>
+
+        <div class="case-desc">
+          당신은 거리를 두려 하지만
+          권태하는 억지로 붙잡지 않는다.
+        </div>
+
+        <div class="case-tag">
+          RELATION
+        </div>
+
+      </div>
+
+
+      <div class="case-row">
+
+        <div class="case-no">
+          05
+        </div>
+
+        <div class="case-title">
+          고난이도 합동 수술
+        </div>
+
+        <div class="case-desc">
+          가장 냉정해야 하는 수술실.
+          두 사람이 서로의 판단과 실력을 믿어야 한다.
+        </div>
+
+        <div class="case-tag">
+          OPERATING ROOM
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PLAY GUIDE / GREEN
+================================================== -->
+
+<section class="section section-green play-section">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="section-code">
+          04 / PLAY GUIDE
+        </div>
+
+        <h2 class="section-title">
+          추천 플레이
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="play-intro">
+      병원에서 벌어지는 다양한 상황을 직접 만들어보세요.
+      대화와 선택에 따라 관계가 달라집니다.
+    </div>
+
+
+    <div class="play-line">
+
+
+      <div class="play-item">
+
+        <div class="play-number">
+          01
+        </div>
+
+        <div class="play-title">
+          <span>🩺</span> 협진하기
+        </div>
+
+        <div class="play-text">
+          환자 케이스를 두고 권태하와 협진해보세요.
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-number">
+          02
+        </div>
+
+        <div class="play-title">
+          <span>🏥</span> 함께 수술하기
+        </div>
+
+        <div class="play-text">
+          수술실에서 서로의 판단과 실력을 확인해보세요.
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-number">
+          03
+        </div>
+
+        <div class="play-title">
+          <span>🌙</span> 야간 당직
+        </div>
+
+        <div class="play-text">
+          늦은 밤 당직실에서 평소와 다른 대화를 나눠보세요.
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-number">
+          04
+        </div>
+
+        <div class="play-title">
+          <span>🥼</span> 외래·회진
+        </div>
+
+        <div class="play-text">
+          진료실과 병동에서 병원 일상을 즐겨보세요.
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-number">
+          05
+        </div>
+
+        <div class="play-title">
+          <span>✈️</span> 학회 떠나기
+        </div>
+
+        <div class="play-text">
+          병원 밖 학회에서 가운 밖의 모습을 만나보세요.
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-number">
+          06
+        </div>
+
+        <div class="play-title">
+          <span>💬</span> 관계 만들기
+        </div>
+
+        <div class="play-text">
+          원하는 거리와 방식으로 관계를 이어가세요.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ACCESS / WHITE
+================================================== -->
+
+<section class="section section-light">
+
+  <div class="wrap">
+
+    <div class="access-layout">
+
+
+      <div>
+
+        <div class="access-code">
+          MEDICAL RECORD ACCESS
+        </div>
+
+        <h2 class="access-title">
+          진료기록열람하기
+        </h2>
+
+        <div class="access-copy">
+          원하는 플랫폼에서 이야기를 시작하세요.
+        </div>
+
+      </div>
+
+
+      <div class="access-buttons">
+
+
+        <a
+          class="access-button"
+          href="https://tikita.ai/ko/story/NTFMLUDK?referrer=Z7272W"
+          target="_blank"
+          rel="noopener">
+
+          <div>
+            <strong>티키타에서 열람하기</strong>
+            <small>TIKITA · OPEN RECORD</small>
+          </div>
+
+          <div class="access-arrow">
+            →
+          </div>
+
+        </a>
+
+
+        <a
+          class="access-button"
+          href="여기에_유니챗_URL"
+          target="_blank"
+          rel="noopener">
+
+          <div>
+            <strong>유니챗에서 열람하기</strong>
+            <small>UNICHAT · OPEN RECORD</small>
+          </div>
+
+          <div class="access-arrow">
+            →
+          </div>
+
+        </a>
+
+
+        <a
+          class="access-button"
+          href="여기에_크랙_URL"
+          target="_blank"
+          rel="noopener">
+
+          <div>
+            <strong>크랙에서 열람하기</strong>
+            <small>CRACK · OPEN RECORD</small>
+          </div>
+
+          <div class="access-arrow">
+            →
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="footer">
+
+  <div class="footer-code">
+    SEONGWOON UNIVERSITY MEDICAL CENTER
+  </div>
+
+  <div class="footer-main">
+    © 2026 아몬드송송 · ALL RIGHTS RESERVED
+  </div>
+
+  <div class="footer-text">
+    본 작품의 세계관 · 캐릭터 설정 · 스토리 · 창작 요소 및
+    HTML 구조 · 레이아웃 · 디자인의
+    무단 복제, 도용, 변형 및 재배포를 금합니다.
+  </div>
+
+</footer>
+
+
+</body>
+</html>
