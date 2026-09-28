@@ -19,8 +19,8 @@ body{
   margin:0;
   width:100%;
   overflow-x:hidden;
-  background:#11251f;
-  color:#e8efeb;
+  background:#061713;
+  color:#eef4f1;
   font-family:
     "Pretendard",
     "Noto Sans KR",
@@ -42,114 +42,104 @@ img{
 }
 
 :root{
+  --bg-dark:#061713;
+  --bg-dark-2:#08201a;
+  --bg-dark-3:#0b2a22;
+
+  --line-dark:rgba(160,190,178,.14);
+  --line-mid:#29443b;
+
   --white:#f4f5f1;
-  --paper:#ffffff;
+  --paper:#fbfcfa;
+  --ink:#16211d;
+  --muted:#61726b;
+  --soft:#7e8c86;
 
-  --green:#11251f;
-  --green2:#173229;
-  --green3:#22463a;
-
-  --text:#17201d;
-  --soft:#596963;
-  --muted:#77857f;
-
-  --darktext:#e8efeb;
-  --darksoft:#a4b6af;
-
-  --line:#cfd7d2;
-  --darkline:#304a40;
-  --accent:#2f6a56;
-  --accent-soft:#45695b;
+  --green-accent:#83a79a;
+  --green-accent-2:#6e9788;
+  --green-deep:#21453a;
 }
-
-
-/* ==================================================
-   FONT
-================================================== */
 
 .batang{
   font-family:
     "Batang",
-    "BatangChe",
-    "바탕" !important;
+    "바탕",
+    "BatangChe";
 }
 
-
-/* ==================================================
-   COMMON
-================================================== */
-
 .wrap{
-  width:min(1200px,calc(100% - 72px));
+  width:min(1180px, calc(100% - 80px));
   margin:0 auto;
 }
 
 .section{
-  padding:84px 0;
+  padding:100px 0;
 }
 
 .section-light{
   background:var(--white);
-  color:var(--text);
+  color:var(--ink);
 }
 
-.section-green{
-  background:var(--green);
-  color:var(--darktext);
+.section-dark{
+  background:var(--bg-dark);
+  color:#eef4f1;
 }
 
 .section-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:30px;
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:22px;
+  align-items:start;
   margin-bottom:34px;
 }
 
-.section-code{
-  margin-bottom:8px;
-  color:#71817b;
-  font-family:Consolas,monospace;
+.section-kicker{
+  color:#7e9b90;
+  font-family:Consolas, monospace;
   font-size:10px;
   letter-spacing:2px;
+  padding-top:10px;
 }
 
-.section-green .section-code{
-  color:#89a399;
+.section-light .section-kicker{
+  color:#7f928a;
+}
+
+.section-title-block small{
+  display:block;
+  color:#6f8a80;
+  font-family:Consolas, monospace;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+.section-light .section-title-block small{
+  color:#82948d;
 }
 
 .section-title{
   margin:0;
   font-family:
     "Batang",
-    "BatangChe",
-    "바탕";
-  font-size:42px;
+    "바탕",
+    "BatangChe";
+  font-size:52px;
   font-weight:700;
-  line-height:1.25;
+  line-height:1.15;
   letter-spacing:-1px;
 }
 
-.section-sub{
-  max-width:380px;
-  color:#74827c;
+.section-desc{
+  margin-top:14px;
+  color:#8ea59b;
   font-size:14px;
   line-height:1.8;
-  text-align:right;
 }
 
-.section-green .section-sub{
-  color:#91a49d;
-}
-
-.point-name{
-  color:var(--accent);
-  font-weight:800;
-}
-
-.point-hero{
-  color:#ffffff;
-  font-weight:800;
+.section-light .section-desc{
+  color:#71827b;
 }
 
 
@@ -157,124 +147,140 @@ img{
    HEADER
 ================================================== */
 
-.hospital-header{
-  height:56px;
+.topbar{
+  height:44px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:#04100d;
+}
+
+.topbar-inner{
+  width:100%;
+  height:100%;
+  padding:0 16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:
-    0
-    max(20px,env(safe-area-inset-right))
-    0
-    max(20px,env(safe-area-inset-left));
-  background:#08130f;
-  border-bottom:1px solid #294137;
-  color:#dce8e3;
 }
 
-.hospital-left{
+.topbar-left{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.cross{
+.topbar-plus{
   width:28px;
   height:28px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border:1px solid #6b9485;
-  color:#9dc0b4;
-  font-size:16px;
+  border:1px solid rgba(167,198,186,.5);
+  color:#b8d0c7;
+  font-size:15px;
+  line-height:1;
 }
 
-.hospital-name{
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
+.topbar-name{
+  font-size:10px;
+  font-weight:700;
+  color:#ebf3ef;
 }
 
-.hospital-en{
-  margin-top:2px;
-  color:#687f77;
-  font-family:Consolas,monospace;
+.topbar-sub{
+  margin-top:1px;
+  color:#6e857c;
+  font-family:Consolas, monospace;
   font-size:7px;
-  letter-spacing:1.2px;
+  letter-spacing:1.4px;
 }
 
-.system-status{
-  color:#6e9185;
-  font-family:Consolas,monospace;
+.topbar-right{
+  color:#6e857c;
+  font-family:Consolas, monospace;
   font-size:8px;
-  letter-spacing:1px;
+  letter-spacing:1.4px;
 }
 
 
 /* ==================================================
-   HERO / GREEN
+   HERO
 ================================================== */
 
 .hero{
-  min-height:620px;
-  display:flex;
-  align-items:center;
+  position:relative;
+  min-height:760px;
   background:
-    radial-gradient(
-      circle at 80% 18%,
-      rgba(126,169,154,.08),
-      transparent 30%
-    ),
-    linear-gradient(
-      rgba(255,255,255,.018) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.018) 1px,
-      transparent 1px
-    ),
-    #11251f;
+    radial-gradient(circle at 78% 18%, rgba(78,120,104,.16), transparent 26%),
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, #071611 0%, #061713 45%, #08201a 100%);
   background-size:
     auto,
-    46px 46px,
-    46px 46px,
+    64px 64px,
+    64px 64px,
     auto;
 }
 
 .hero-inner{
-  max-width:820px;
+  padding:84px 0 64px;
 }
 
-.hero-code{
-  color:#89a99d;
-  font-family:Consolas,monospace;
+.hero-main{
+  max-width:940px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero-title-block{
+  padding-top:30px;
+}
+
+.hero-label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#8ba89c;
+  font-family:Consolas, monospace;
   font-size:10px;
-  font-weight:700;
-  letter-spacing:2.4px;
+  letter-spacing:2px;
 }
 
-.hero h1{
-  margin:24px 0 0;
-  color:#f4f7f5;
+.hero-label::before{
+  content:"";
+  display:block;
+  width:28px;
+  height:1px;
+  background:#5b7f72;
+}
+
+.hero-title{
+  margin:20px 0 0;
   font-family:
     "Batang",
-    "BatangChe",
-    "바탕";
-  font-size:clamp(60px,8vw,96px);
+    "바탕",
+    "BatangChe";
+  font-size:88px;
   font-weight:700;
-  line-height:1.08;
-  letter-spacing:-4px;
+  line-height:1.06;
+  letter-spacing:-3px;
+  color:#f5f8f6;
+}
+
+.hero-copy-wrap{
+  padding-left:24px;
+  border-left:1px solid rgba(164,193,182,.18);
 }
 
 .hero-copy{
-  max-width:760px;
-  margin-top:32px;
-  color:#d8e2de;
+  margin:0;
   font-family:
     "Batang",
-    "BatangChe",
-    "바탕";
+    "바탕",
+    "BatangChe";
+  color:#d7e2dd;
   font-size:20px;
   line-height:1.95;
 }
@@ -284,454 +290,182 @@ img{
   font-weight:800;
 }
 
-
-/* ==================================================
-   STORY / WHITE
-================================================== */
-
-.story-layout{
-  display:grid;
-  grid-template-columns:270px 1fr;
-  gap:54px;
+.hero-bottom{
+  max-width:940px;
+  margin:42px auto 0;
+  border-top:1px solid rgba(164,193,182,.15);
+  padding-top:20px;
 }
 
-.story-data{
-  border-top:1px solid #7c9188;
-}
-
-.story-data-row{
-  padding:16px 0;
-  border-bottom:1px solid #d0d8d3;
-}
-
-.story-data-row span{
-  display:block;
-  color:#7a8a84;
-  font-family:Consolas,monospace;
-  font-size:10px;
-  letter-spacing:1px;
-}
-
-.story-data-row strong{
-  display:block;
-  margin-top:6px;
-  color:#294a3d;
-  font-size:14px;
-  font-weight:800;
-}
-
-.story-body{
-  max-width:820px;
-  color:#4f5f58;
-  font-size:16px;
-  line-height:2;
-}
-
-.story-body p{
-  margin:0 0 24px;
-}
-
-.story-body strong{
-  color:#214f3e;
-  font-weight:800;
-}
-
-.story-quote{
-  margin-top:30px;
-  padding:24px 24px;
-  background:#e4ebe7;
-  border-left:3px solid #527d6d;
-  color:#243e35;
-  font-family:
-    "Batang",
-    "BatangChe",
-    "바탕";
-  font-size:18px;
-  line-height:1.9;
-}
-
-
-/* ==================================================
-   STAFF HORIZONTAL SCROLL
-================================================== */
-
-.scroll-hint{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#9ab1a8;
-  font-family:Consolas,monospace;
-  font-size:9px;
-  letter-spacing:1px;
-}
-
-.horizontal-rail{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  overflow-y:hidden;
-  padding:4px 4px 18px;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
-}
-
-.horizontal-rail::-webkit-scrollbar{
-  height:6px;
-}
-
-.horizontal-rail::-webkit-scrollbar-track{
-  background:#1b3028;
-}
-
-.horizontal-rail::-webkit-scrollbar-thumb{
-  background:#6c9485;
-}
-
-
-/* ==================================================
-   MEDICAL STAFF / GREEN
-================================================== */
-
-.staff-card{
-  flex:0 0 min(440px,86vw);
-  scroll-snap-align:start;
-  background:#f8f9f6;
-  border:1px solid #456255;
-  box-shadow:0 12px 30px rgba(0,0,0,.15);
-  color:#17201d;
-}
-
-.staff-card-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 14px;
-  background:#1e4436;
-  color:#bed4cc;
-  font-family:Consolas,monospace;
-  font-size:8px;
-  letter-spacing:1.3px;
-}
-
-.staff-photo{
-  height:300px;
-  overflow:hidden;
-  background:#e1e7e3;
-}
-
-.staff-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.staff-photo.user-profile{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    linear-gradient(
-      rgba(25,70,54,.045) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(25,70,54,.045) 1px,
-      transparent 1px
-    ),
-    #e9eeeb;
-  background-size:28px 28px;
-}
-
-.user-profile-inner{
-  text-align:center;
-}
-
-.user-profile-icon{
-  width:76px;
-  height:76px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #84a095;
-  border-radius:50%;
-  color:#496c5f;
-  font-family:Consolas,monospace;
-  font-size:20px;
-}
-
-.user-profile-text{
-  margin-top:12px;
-  color:#83938c;
-  font-family:Consolas,monospace;
-  font-size:8px;
-  letter-spacing:1.5px;
-}
-
-.staff-body{
-  padding:22px;
-}
-
-.staff-dept{
-  color:#658377;
-  font-family:Consolas,monospace;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-}
-
-.staff-name-line{
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-  margin-top:8px;
-}
-
-.staff-name{
-  color:#192821;
-  font-size:28px;
-  font-weight:900;
-}
-
-.staff-you{
-  color:#697d74;
-  font-size:18px;
-  font-weight:700;
-}
-
-.staff-en{
-  margin-top:4px;
-  color:#87938e;
-  font-family:Consolas,monospace;
-  font-size:8px;
-  letter-spacing:1.2px;
-}
-
-.staff-spec{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:14px;
-}
-
-.spec{
-  padding:6px 9px;
-  background:#edf1ee;
-  border:1px solid #d1dad5;
-  color:#5b6f66;
-  font-size:11px;
-  font-weight:700;
-}
-
-.staff-summary{
-  margin-top:18px;
-  color:#56645f;
+.hero-meta{
+  color:#89a59a;
   font-size:14px;
   line-height:1.8;
 }
 
-.staff-summary strong{
-  color:#254d3f;
-  font-weight:800;
-}
-
-.relation-box{
-  margin-top:18px;
-  padding-top:15px;
-  border-top:1px solid #d7ddd9;
-}
-
-.relation-title{
-  color:#799087;
-  font-family:Consolas,monospace;
-  font-size:9px;
+.hero-meta strong{
+  color:#cfe0d8;
   font-weight:700;
-  letter-spacing:1.5px;
 }
 
-.relation-row{
+.hero-people{
+  margin-top:18px;
   display:grid;
-  grid-template-columns:74px 1fr;
-  gap:10px;
-  margin-top:10px;
-  font-size:12px;
-  line-height:1.65;
+  grid-template-columns:repeat(3,1fr);
+  gap:48px;
 }
 
-.relation-row b{
-  color:#3d6657;
+.hero-person small{
+  display:block;
+  color:#7c998d;
+  font-family:Consolas, monospace;
+  font-size:9px;
+  letter-spacing:1.8px;
+  margin-bottom:6px;
 }
 
-.relation-row span{
-  color:#69766f;
-}
-
-
-/* ==================================================
-   CASE FILE / WHITE
-================================================== */
-
-.case-section{
-  padding:68px 0;
-}
-
-.case-section .section-head{
-  margin-bottom:22px;
-}
-
-.case-list{
-  border-top:1px solid #8fa097;
-}
-
-.case-row{
-  display:grid;
-  grid-template-columns:86px 250px 1fr 130px;
-  align-items:center;
-  min-height:104px;
-  border-bottom:1px solid #d4dbd7;
-  background:#f8f9f6;
-}
-
-.case-no{
-  padding:20px 18px;
-  color:#45695b;
-  font-family:Consolas,monospace;
-  font-size:24px;
-}
-
-.case-title{
-  padding:20px 20px;
-  border-left:1px solid #d5ddd8;
-  color:#1f352c;
+.hero-person b{
+  display:block;
   font-family:
     "Batang",
-    "BatangChe",
-    "바탕";
-  font-size:18px;
-  font-weight:700;
-  line-height:1.5;
+    "바탕",
+    "BatangChe";
+  font-size:28px;
+  line-height:1.25;
+  color:#ffffff;
+  margin-bottom:4px;
 }
 
-.case-desc{
-  padding:20px 20px;
-  border-left:1px solid #d5ddd8;
-  color:#68766f;
-  font-size:13px;
-  line-height:1.75;
-}
-
-.case-tag{
-  padding:20px 12px;
-  border-left:1px solid #d5ddd8;
-  color:#7a8c84;
-  font-family:Consolas,monospace;
-  font-size:9px;
-  text-align:center;
-}
-
-
-/* ==================================================
-   PLAY GUIDE / GREEN
-================================================== */
-
-.play-section{
-  padding:46px 0;
-}
-
-.play-section .section-head{
-  margin-bottom:14px;
-}
-
-.play-intro{
-  margin:0 0 14px;
-  color:#9bb0a8;
-  font-size:13px;
-  line-height:1.65;
-}
-
-.play-line{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  border-top:1px solid #426055;
-  border-bottom:1px solid #426055;
-}
-
-.play-item{
-  padding:16px 16px;
-  background:#172d26;
-  border-right:1px solid #304b40;
-}
-
-.play-item:last-child{
-  border-right:0;
-}
-
-.play-number{
-  color:#7f978d;
-  font-family:Consolas,monospace;
-  font-size:9px;
-}
-
-.play-title{
-  margin-top:8px;
-  color:#eef4f1;
+.hero-person span{
+  color:#a6bbb3;
   font-size:14px;
-  font-weight:800;
-  line-height:1.45;
-  white-space:nowrap;
-}
-
-.play-title span{
-  margin-right:4px;
-}
-
-.play-text{
-  margin-top:7px;
-  color:#a8bbb3;
-  font-size:12px;
   line-height:1.6;
 }
 
 
 /* ==================================================
-   ACCESS / WHITE
+   CASE FILE
+================================================== */
+
+.case-section{
+  padding-top:96px;
+  padding-bottom:86px;
+}
+
+.case-table{
+  margin-top:12px;
+  border-top:1px solid #cfd8d3;
+}
+
+.case-row{
+  display:grid;
+  grid-template-columns:70px 1fr 110px;
+  align-items:center;
+  min-height:56px;
+  border-bottom:1px solid #d6dfdb;
+}
+
+.case-no{
+  color:#7f938a;
+  font-family:Consolas, monospace;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.case-name{
+  font-family:
+    "Batang",
+    "바탕",
+    "BatangChe";
+  font-size:20px;
+  font-weight:700;
+  color:#1d2d27;
+}
+
+.case-tag{
+  color:#7c8e87;
+  font-size:12px;
+  text-align:right;
+}
+
+
+/* ==================================================
+   PLAY GUIDE
+================================================== */
+
+.play-section{
+  background:
+    linear-gradient(90deg, #03110d 0%, #041612 55%, #061713 100%);
+}
+
+.play-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:10px;
+}
+
+.play-card{
+  background:#f7f8f6;
+  border:1px solid #d6ddd9;
+  padding:14px 16px 16px;
+  color:#16211d;
+}
+
+.play-card small{
+  display:block;
+  color:#86958f;
+  font-family:Consolas, monospace;
+  font-size:9px;
+  letter-spacing:1.2px;
+}
+
+.play-card-title{
+  margin-top:7px;
+  font-size:17px;
+  font-weight:800;
+  color:#15211d;
+  line-height:1.4;
+}
+
+.play-card-text{
+  margin-top:6px;
+  color:#6d7b76;
+  font-size:13px;
+  line-height:1.7;
+}
+
+
+/* ==================================================
+   ACCESS
 ================================================== */
 
 .access-layout{
   display:grid;
-  grid-template-columns:.82fr 1.18fr;
+  grid-template-columns:.95fr 1.05fr;
   gap:70px;
-  align-items:center;
-}
-
-.access-code{
-  color:#71817b;
-  font-family:Consolas,monospace;
-  font-size:10px;
-  letter-spacing:2px;
+  align-items:start;
 }
 
 .access-title{
-  margin:14px 0 0;
-  color:#1b3028;
+  margin:10px 0 0;
   font-family:
     "Batang",
-    "BatangChe",
-    "바탕";
-  font-size:44px;
-  font-weight:700;
+    "바탕",
+    "BatangChe";
+  font-size:46px;
+  line-height:1.18;
+  color:#13211c;
 }
 
 .access-copy{
-  margin-top:12px;
-  color:#74827c;
+  margin-top:14px;
+  color:#73827b;
   font-size:14px;
   line-height:1.8;
 }
 
-.access-buttons{
+.access-list{
   display:grid;
   gap:10px;
 }
@@ -739,36 +473,37 @@ img{
 .access-button{
   display:grid;
   grid-template-columns:1fr auto;
+  gap:14px;
   align-items:center;
-  padding:18px 18px;
-  background:#fff;
-  border:1px solid #ccd5d0;
-  transition:.2s;
+  padding:18px 20px;
+  border:1px solid #ccd6d1;
+  background:#ffffff;
+  transition:.2s ease;
 }
 
 .access-button:hover{
   transform:translateX(4px);
-  border-color:#69877b;
+  border-color:#809b90;
 }
 
 .access-button strong{
   display:block;
-  color:#29473b;
-  font-size:14px;
+  font-size:15px;
+  color:#20322c;
 }
 
 .access-button small{
   display:block;
-  margin-top:5px;
-  color:#7b8984;
-  font-family:Consolas,monospace;
-  font-size:8px;
-  letter-spacing:1px;
+  margin-top:4px;
+  color:#8b9893;
+  font-family:Consolas, monospace;
+  font-size:9px;
+  letter-spacing:1.2px;
 }
 
 .access-arrow{
-  color:#527768;
-  font-size:16px;
+  color:#5a786d;
+  font-size:18px;
 }
 
 
@@ -777,32 +512,29 @@ img{
 ================================================== */
 
 .footer{
-  padding:
-    34px
-    20px
-    calc(34px + env(safe-area-inset-bottom));
-  background:#08110e;
-  border-top:1px solid #273c34;
+  background:#04100d;
+  border-top:1px solid rgba(255,255,255,.06);
   text-align:center;
+  padding:34px 20px calc(34px + env(safe-area-inset-bottom));
 }
 
 .footer-code{
-  color:#536c62;
-  font-family:Consolas,monospace;
+  color:#61776f;
+  font-family:Consolas, monospace;
   font-size:8px;
   letter-spacing:2px;
 }
 
 .footer-main{
   margin-top:10px;
-  color:#83998f;
+  color:#8fa39b;
   font-size:11px;
   font-weight:700;
 }
 
 .footer-text{
   margin-top:8px;
-  color:#52665e;
+  color:#5f726b;
   font-size:9px;
   line-height:1.8;
 }
@@ -812,7 +544,7 @@ img{
    TABLET
 ================================================== */
 
-@media(max-width:1000px){
+@media(max-width:980px){
 
   .wrap{
     width:100%;
@@ -822,46 +554,32 @@ img{
 
   .hero{
     min-height:auto;
-    padding:76px 0;
   }
 
-  .story-layout{
+  .hero-main{
     grid-template-columns:1fr;
-    gap:30px;
+    gap:34px;
   }
 
-  .story-data{
-    display:grid;
+  .hero-title-block{
+    padding-top:0;
+  }
+
+  .hero-copy-wrap{
+    padding-left:18px;
+  }
+
+  .hero-title{
+    font-size:72px;
+  }
+
+  .hero-people{
     grid-template-columns:repeat(3,1fr);
+    gap:24px;
   }
 
-  .story-data-row{
-    padding:12px 10px;
-    border-right:1px solid #d0d8d3;
-  }
-
-  .story-data-row:last-child{
-    border-right:0;
-  }
-
-  .case-row{
-    grid-template-columns:72px 210px 1fr;
-  }
-
-  .case-tag{
-    display:none;
-  }
-
-  .play-line{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .play-item:nth-child(3){
-    border-right:0;
-  }
-
-  .play-item:nth-child(-n+3){
-    border-bottom:1px solid #304b40;
+  .play-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .access-layout{
@@ -869,16 +587,23 @@ img{
     gap:34px;
   }
 
+  .section-head{
+    grid-template-columns:100px 1fr;
+  }
 }
 
 
+/* ==================================================
+   MOBILE
+================================================== */
+
 @media(max-width:620px){
 
-  .hospital-header{
-    height:50px;
+  .topbar{
+    height:48px;
   }
 
-  .system-status{
+  .topbar-right{
     display:none;
   }
 
@@ -888,137 +613,97 @@ img{
   }
 
   .section{
-    padding:54px 0;
+    padding:64px 0;
   }
 
   .section-head{
-    display:block;
-    margin-bottom:24px;
+    grid-template-columns:1fr;
+    gap:8px;
+    margin-bottom:26px;
+  }
+
+  .section-kicker{
+    padding-top:0;
+    font-size:9px;
+  }
+
+  .section-title-block small{
+    font-size:9px;
   }
 
   .section-title{
-    font-size:32px;
+    font-size:36px;
   }
 
-  .section-sub{
-    margin-top:10px;
-    max-width:none;
-    text-align:left;
+  .section-desc{
     font-size:13px;
   }
 
-  .hero{
-    padding:58px 0;
+  .hero-inner{
+    padding:56px 0 44px;
   }
 
-  .hero h1{
+  .hero-title{
     font-size:54px;
     letter-spacing:-2px;
   }
 
+  .hero-copy-wrap{
+    padding-left:14px;
+  }
+
   .hero-copy{
-    font-size:16px;
-    line-height:1.9;
+    font-size:17px;
+    line-height:1.85;
   }
 
-  .story-data{
-    grid-template-columns:1fr;
+  .hero-bottom{
+    margin-top:30px;
+    padding-top:16px;
   }
 
-  .story-data-row{
-    border-right:0;
-    padding:14px 0;
-  }
-
-  .story-body{
-    font-size:15px;
-  }
-
-  .story-quote{
-    font-size:16px;
-    padding:20px 18px;
-  }
-
-  .staff-card{
-    flex-basis:86vw;
-  }
-
-  .staff-photo{
-    height:260px;
-  }
-
-  .staff-name{
-    font-size:24px;
-  }
-
-  .staff-you{
-    font-size:16px;
-  }
-
-  .staff-summary{
+  .hero-meta{
     font-size:13px;
   }
 
-  .relation-row{
-    font-size:11px;
+  .hero-people{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:16px;
+  }
+
+  .hero-person b{
+    font-size:23px;
+  }
+
+  .hero-person span{
+    font-size:13px;
   }
 
   .case-row{
-    grid-template-columns:54px 1fr;
-    min-height:auto;
+    grid-template-columns:56px 1fr 74px;
+    min-height:54px;
+    gap:8px;
   }
 
-  .case-no{
-    align-self:stretch;
-    display:flex;
-    align-items:center;
-    padding:16px 12px;
-    border-right:1px solid #d5ddd8;
-    font-size:22px;
-  }
-
-  .case-title{
-    border-left:0;
-    padding:16px 14px;
+  .case-name{
     font-size:16px;
   }
 
-  .case-desc{
-    grid-column:1 / -1;
-    padding:12px 14px 16px;
-    border-left:0;
-    border-top:1px solid #e0e5e2;
-    font-size:12px;
-    line-height:1.7;
-  }
-
-  .play-line{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .play-item{
-    border-bottom:1px solid #304b40;
-  }
-
-  .play-item:nth-child(3){
-    border-right:1px solid #304b40;
-  }
-
-  .play-item:nth-child(2n){
-    border-right:0;
-  }
-
-  .play-item:nth-last-child(-n+2){
-    border-bottom:0;
-  }
-
-  .play-title{
-    font-size:13px;
-    white-space:normal;
-  }
-
-  .play-text{
+  .case-tag{
     font-size:11px;
+  }
+
+  .play-grid{
+    grid-template-columns:1fr;
+  }
+
+  .play-card-title{
+    font-size:16px;
+  }
+
+  .play-card-text{
+    font-size:12px;
   }
 
   .access-title{
@@ -1029,168 +714,93 @@ img{
     font-size:13px;
   }
 
+  .access-button strong{
+    font-size:14px;
+  }
 }
-
 
 @media(max-width:390px){
 
-  .wrap{
-    padding-left:13px;
-    padding-right:13px;
-  }
-
-  .hero h1{
+  .hero-title{
     font-size:46px;
   }
 
   .section-title{
-    font-size:28px;
+    font-size:32px;
   }
-
 }
 </style>
 </head>
 
-
 <body>
 
-<!-- ==================================================
-     HEADER
-================================================== -->
-
-<header class="hospital-header">
-
-  <div class="hospital-left">
-
-    <div class="cross">
-      +
-    </div>
-
-    <div>
-      <div class="hospital-name">
-        성운대 메디컬 센터
-      </div>
-
-      <div class="hospital-en">
-        SEONGWOON UNIVERSITY MEDICAL CENTER
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="topbar-plus">+</div>
+      <div>
+        <div class="topbar-name">성운대 메디컬 센터</div>
+        <div class="topbar-sub">SEONGWOON UNIVERSITY MEDICAL CENTER</div>
       </div>
     </div>
 
+    <div class="topbar-right">
+      INTERNAL INFORMATION SYSTEM ・ SYSTEM ONLINE
+    </div>
   </div>
-
-  <div class="system-status">
-    INTERNAL MEDICAL SYSTEM · ONLINE
-  </div>
-
 </header>
 
 
-
-<!-- ==================================================
-     HERO / GREEN
-================================================== -->
-
 <section class="hero">
+  <div class="wrap hero-inner">
 
-  <div class="wrap">
+    <div class="hero-main">
 
-    <div class="hero-inner">
+      <div class="hero-title-block">
+        <div class="hero-label">MEDICAL ROMANCE</div>
 
-      <div class="hero-code">
-        OB/GYN × UROLOGY · MEDICAL ROMANCE
+        <h1 class="hero-title">
+          아래쪽은<br>
+          다 압니다만
+        </h1>
       </div>
 
-      <h1>
-        아래쪽은<br>
-        다 압니다만
-      </h1>
-
-      <div class="hero-copy">
-        산부인과 남자와 비뇨기과 여자.<br>
-        사람의 몸은 누구보다 잘 아는 두 의사가<br>
-        <strong>정작 서로의 마음만큼은 쉽게 읽지 못한다.</strong>
+      <div class="hero-copy-wrap">
+        <p class="hero-copy">
+          산부인과 남자와 비뇨기과 여자.<br>
+          사람의 몸은 누구보다 잘 아는 두 의사가<br>
+          <strong>정작 서로의 마음만큼은 쉽게 읽어내지 못한다.</strong>
+        </p>
       </div>
 
     </div>
 
-  </div>
+    <div class="hero-bottom">
 
-</section>
-
-
-
-<!-- ==================================================
-     STORY / WHITE
-================================================== -->
-
-<section class="section section-light">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <div>
-        <div class="section-code">
-          01 / STORY
-        </div>
-
-        <h2 class="section-title">
-          성운대 메디컬 센터
-        </h2>
+      <div class="hero-meta">
+        <strong>성운대 메디컬 센터</strong> ・
+        메디컬 · 오피스 · 어른 로맨스 ・
+        <strong>권태하 × 당신</strong>
       </div>
 
-      <div class="section-sub">
-        대학병원을 배경으로 펼쳐지는<br>
-        세 의료진의 메디컬 로맨스.
-      </div>
+      <div class="hero-people">
 
-    </div>
-
-
-    <div class="story-layout">
-
-      <div class="story-data">
-
-        <div class="story-data-row">
-          <span>LOCATION</span>
-          <strong>성운대 메디컬 센터</strong>
+        <div class="hero-person">
+          <small>OB/GYN</small>
+          <b>권태하</b>
+          <span>산부인과 전문의</span>
         </div>
 
-        <div class="story-data-row">
-          <span>MAIN</span>
-          <strong>산부인과 × 비뇨기과</strong>
+        <div class="hero-person">
+          <small>UROLOGY</small>
+          <b>당신</b>
+          <span>비뇨기과 교수</span>
         </div>
 
-        <div class="story-data-row">
-          <span>SUPPORT</span>
-          <strong>마취통증의학과</strong>
-        </div>
-
-      </div>
-
-
-      <div class="story-body">
-
-        <p>
-          대한민국 최고 권위의 대학병원
-          <strong>성운대 메디컬 센터.</strong>
-        </p>
-
-        <p>
-          산부인과 전문의 <strong class="point-name">권태하</strong>와
-          비뇨기과 교수인 <strong class="point-name">당신</strong>은
-          업무 영역은 가깝지만 만나기만 하면 부딪히는 사이.
-        </p>
-
-        <p>
-          그리고 <strong class="point-name">당신</strong>의 곁에는
-          오랜 시간 함께해 온
-          마취통증의학과 교수 <strong class="point-name">윤시우</strong>가 있다.
-        </p>
-
-        <div class="story-quote">
-          수술실에서는 누구보다 냉정한 의사들.<br>
-          하지만 가운을 벗은 뒤의 관계까지 명확한 것은 아니다.
+        <div class="hero-person">
+          <small>ANESTH.</small>
+          <b>윤시우</b>
+          <span>마취통증의학과 교수</span>
         </div>
 
       </div>
@@ -1198,429 +808,147 @@ img{
     </div>
 
   </div>
-
 </section>
 
-
-
-<!-- ==================================================
-     MEDICAL STAFF / GREEN
-================================================== -->
-
-<section class="section section-green">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <div>
-        <div class="section-code">
-          02 / MEDICAL STAFF
-        </div>
-
-        <h2 class="section-title">
-          의료진 소개
-        </h2>
-      </div>
-
-      <div class="scroll-hint">
-        좌우로 넘겨보세요 →
-      </div>
-
-    </div>
-
-
-    <div class="horizontal-rail">
-
-      <!-- 권태하 -->
-      <article class="staff-card">
-
-        <div class="staff-card-top">
-          <span>STAFF IDENTIFICATION</span>
-          <span>OB/GYN</span>
-        </div>
-
-        <div class="staff-photo">
-          <img
-            src="https://auth.tikita.ai/storage/v1/object/public/avatars/character-library/c5a099f7-a393-4775-b04f-bee979837480/user-9482275b-5719-4316-a93e-f41c7307f2ba.webp"
-            alt="권태하">
-        </div>
-
-        <div class="staff-body">
-
-          <div class="staff-dept">
-            OBSTETRICS &amp; GYNECOLOGY
-          </div>
-
-          <div class="staff-name-line">
-            <div class="staff-name">권태하</div>
-          </div>
-
-          <div class="staff-en">
-            KWON TAEHA
-          </div>
-
-          <div class="staff-spec">
-            <span class="spec">30세</span>
-            <span class="spec">185cm</span>
-            <span class="spec">산부인과 전문의</span>
-          </div>
-
-          <div class="staff-summary">
-            단정한 흑발과 깊은 눈빛의 차가운 인상.
-            침착하고 여유로우며
-            <strong>필요한 순간 조용히 먼저 챙기는 타입.</strong>
-          </div>
-
-          <div class="relation-box">
-
-            <div class="relation-title">
-              RELATION
-            </div>
-
-            <div class="relation-row">
-              <b>차도희</b>
-              <span>마주칠 때마다 부딪히는 비뇨기과 교수.</span>
-            </div>
-
-            <div class="relation-row">
-              <b>윤시우</b>
-              <span>같은 병원에서 근무하는 마취통증의학과 교수.</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 윤시우 -->
-      <article class="staff-card">
-
-        <div class="staff-card-top">
-          <span>STAFF IDENTIFICATION</span>
-          <span>ANESTH.</span>
-        </div>
-
-        <div class="staff-photo">
-          <img
-            src="https://auth.tikita.ai/storage/v1/object/public/avatars/character-library/c5a099f7-a393-4775-b04f-bee979837480/user-2d5d1340-c928-4a60-8e97-b0f9a3926dab.webp"
-            alt="윤시우">
-        </div>
-
-        <div class="staff-body">
-
-          <div class="staff-dept">
-            ANESTHESIOLOGY
-          </div>
-
-          <div class="staff-name-line">
-            <div class="staff-name">윤시우</div>
-          </div>
-
-          <div class="staff-en">
-            YOON SIWOO
-          </div>
-
-          <div class="staff-spec">
-            <span class="spec">30세</span>
-            <span class="spec">183cm</span>
-            <span class="spec">마취통증의학과 교수</span>
-          </div>
-
-          <div class="staff-summary">
-            서글서글한 미소의 강아지상 미남.
-            누구에게나 자상하고 매너가 좋으며
-            <strong>차도희에게는 가장 오래되고 익숙한 사람.</strong>
-          </div>
-
-          <div class="relation-box">
-
-            <div class="relation-title">
-              RELATION
-            </div>
-
-            <div class="relation-row">
-              <b>차도희</b>
-              <span>중학교 시절부터 함께한 오랜 소꿉친구.</span>
-            </div>
-
-            <div class="relation-row">
-              <b>권태하</b>
-              <span>같은 병원에서 근무하는 산부인과 전문의.</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 차도희 -->
-      <article class="staff-card">
-
-        <div class="staff-card-top">
-          <span>STAFF IDENTIFICATION</span>
-          <span>UROLOGY</span>
-        </div>
-
-        <div class="staff-photo user-profile">
-
-          <div class="user-profile-inner">
-
-            <div class="user-profile-icon">
-              URO
-            </div>
-
-            <div class="user-profile-text">
-              PLAYER CHARACTER
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="staff-body">
-
-          <div class="staff-dept">
-            UROLOGY
-          </div>
-
-          <div class="staff-name-line">
-            <div class="staff-name">차도희</div>
-            <div class="staff-you">(당신)</div>
-          </div>
-
-          <div class="staff-en">
-            PLAYER CHARACTER
-          </div>
-
-          <div class="staff-spec">
-            <span class="spec">비뇨기과</span>
-            <span class="spec">교수</span>
-            <span class="spec">PLAYER</span>
-          </div>
-
-          <div class="staff-summary">
-            성운대 메디컬 센터 비뇨기과 교수.
-            업무와 판단을 중시하며
-            <strong>냉정하고 정확한 기준을 가지고 있다.</strong>
-          </div>
-
-          <div class="relation-box">
-
-            <div class="relation-title">
-              RELATION
-            </div>
-
-            <div class="relation-row">
-              <b>권태하</b>
-              <span>실력은 인정하지만 자주 부딪히는 동료.</span>
-            </div>
-
-            <div class="relation-row">
-              <b>윤시우</b>
-              <span>어린 시절부터 함께한 가장 오래된 친구.</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     CASE FILE / WHITE
-================================================== -->
 
 <section class="section section-light case-section">
-
   <div class="wrap">
 
     <div class="section-head">
+      <div class="section-kicker">03 / CASES</div>
 
-      <div>
-        <div class="section-code">
-          03 / CASE FILE
-        </div>
-
-        <h2 class="section-title">
-          Case File
-        </h2>
+      <div class="section-title-block">
+        <small>CASE FILE</small>
+        <h2 class="section-title">케이스 파일</h2>
       </div>
-
     </div>
 
-
-    <div class="case-list">
+    <div class="case-table">
 
       <div class="case-row">
         <div class="case-no">01</div>
-        <div class="case-title">앙숙의 시작</div>
-        <div class="case-desc">
-          산부인과 권태하와 비뇨기과 당신. 첫 만남부터 서로의 방식이 마음에 들지 않는다.
-        </div>
-        <div class="case-tag">FIRST CONTACT</div>
+        <div class="case-name">앙숙의 시작</div>
+        <div class="case-tag">외래</div>
       </div>
 
       <div class="case-row">
         <div class="case-no">02</div>
-        <div class="case-title">갑작스러운 단둘만의 학회</div>
-        <div class="case-desc">
-          예정과 달리 둘만 남게 된 학회 일정. 병원 밖에서 서로를 길게 마주한다.
-        </div>
-        <div class="case-tag">CONFERENCE</div>
+        <div class="case-name">단둘이 남은 학회</div>
+        <div class="case-tag">학회</div>
       </div>
 
       <div class="case-row">
         <div class="case-no">03</div>
-        <div class="case-title">멈춰 선 폭우 속의 당직실</div>
-        <div class="case-desc">
-          폭우가 쏟아지는 밤. 병원을 떠나지 못한 두 사람이 당직실에서 다시 마주친다.
-        </div>
-        <div class="case-tag">NIGHT DUTY</div>
+        <div class="case-name">폭우 속의 당직실</div>
+        <div class="case-tag">당직실</div>
       </div>
 
       <div class="case-row">
         <div class="case-no">04</div>
-        <div class="case-title">도망치는 여자, 잡지 않는 남자</div>
-        <div class="case-desc">
-          당신은 거리를 두려 하지만 권태하는 억지로 붙잡지 않는다.
-        </div>
-        <div class="case-tag">RELATION</div>
+        <div class="case-name">도망치는 여자, 잡지 않는 남자</div>
+        <div class="case-tag">관계</div>
       </div>
 
       <div class="case-row">
         <div class="case-no">05</div>
-        <div class="case-title">고난이도 합동 수술</div>
-        <div class="case-desc">
-          가장 냉정해야 하는 수술실. 두 사람이 서로의 판단과 실력을 믿어야 한다.
-        </div>
-        <div class="case-tag">OPERATING ROOM</div>
+        <div class="case-name">고난도 합동 수술</div>
+        <div class="case-tag">수술실</div>
       </div>
 
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     PLAY GUIDE / GREEN
-================================================== -->
-
-<section class="section section-green play-section">
-
+<section class="section section-dark play-section">
   <div class="wrap">
 
     <div class="section-head">
+      <div class="section-kicker">04 / PLAY</div>
 
-      <div>
-        <div class="section-code">
-          04 / PLAY GUIDE
+      <div class="section-title-block">
+        <small>HOW TO ENJOY</small>
+        <h2 class="section-title">추천 플레이</h2>
+        <div class="section-desc">
+          정해진 루트 대신, 병원 일과 대화로 세 사람의 거리를 직접 정해 보세요.
         </div>
-
-        <h2 class="section-title">
-          추천 플레이
-        </h2>
       </div>
-
     </div>
 
+    <div class="play-grid">
 
-    <div class="play-intro">
-      병원에서 벌어지는 다양한 상황을 직접 만들어보세요. 대화와 선택에 따라 관계가 달라집니다.
-    </div>
-
-
-    <div class="play-line">
-
-      <div class="play-item">
-        <div class="play-number">01</div>
-        <div class="play-title"><span>🩺</span> 협진하기</div>
-        <div class="play-text">환자 케이스를 두고 권태하와 협진해보세요.</div>
+      <div class="play-card">
+        <small>01</small>
+        <div class="play-card-title">🩺 진료와 협진</div>
+        <div class="play-card-text">
+          환자 케이스를 두고 권태하와 의견을 나누거나, 두 과의 협진을 만들어 보세요.
+        </div>
       </div>
 
-      <div class="play-item">
-        <div class="play-number">02</div>
-        <div class="play-title"><span>🏥</span> 함께 수술하기</div>
-        <div class="play-text">수술실에서 서로의 판단과 실력을 확인해보세요.</div>
+      <div class="play-card">
+        <small>02</small>
+        <div class="play-card-title">🏥 병원 일상</div>
+        <div class="play-card-text">
+          외래, 회진, 연구실, 의국, 카페테리아에서 관계를 쌓아 보세요.
+        </div>
       </div>
 
-      <div class="play-item">
-        <div class="play-number">03</div>
-        <div class="play-title"><span>🌙</span> 야간 당직</div>
-        <div class="play-text">늦은 밤 당직실에서 평소와 다른 대화를 나눠보세요.</div>
+      <div class="play-card">
+        <small>03</small>
+        <div class="play-card-title">🌙 당직실</div>
+        <div class="play-card-text">
+          늦은 밤, 당직 중에 마주치거나 업무가 끝난 뒤 대화를 시작해 보세요.
+        </div>
       </div>
 
-      <div class="play-item">
-        <div class="play-number">04</div>
-        <div class="play-title"><span>🥼</span> 외래·회진</div>
-        <div class="play-text">진료실과 병동에서 병원 일상을 즐겨보세요.</div>
+      <div class="play-card">
+        <small>04</small>
+        <div class="play-card-title">❤️ 합동 수술</div>
+        <div class="play-card-text">
+          수술실에서 평소 부딪히던 사람의 판단과 실력을 확인해 보세요.
+        </div>
       </div>
 
-      <div class="play-item">
-        <div class="play-number">05</div>
-        <div class="play-title"><span>✈️</span> 학회 떠나기</div>
-        <div class="play-text">병원 밖 학회에서 가운 밖의 모습을 만나보세요.</div>
+      <div class="play-card">
+        <small>05</small>
+        <div class="play-card-title">✈️ 가운 밖</div>
+        <div class="play-card-text">
+          학회, 퇴근 후 식사처럼 의사라는 역할에서 벗어난 모습을 만나 보세요.
+        </div>
       </div>
 
-      <div class="play-item">
-        <div class="play-number">06</div>
-        <div class="play-title"><span>💬</span> 관계 만들기</div>
-        <div class="play-text">원하는 거리와 방식으로 관계를 이어가세요.</div>
+      <div class="play-card">
+        <small>06</small>
+        <div class="play-card-title">💬 거리 정하기</div>
+        <div class="play-card-text">
+          다가가도, 선을 그어도 됩니다. 관계는 대화에 따라 달라집니다.
+        </div>
       </div>
 
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     ACCESS / WHITE
-================================================== -->
-
 <section class="section section-light">
-
   <div class="wrap">
 
     <div class="access-layout">
 
       <div>
-
-        <div class="access-code">
-          MEDICAL RECORD ACCESS
+        <div class="section-title-block">
+          <small>MEDICAL RECORD ACCESS</small>
+          <h2 class="access-title">진료기록열람하기</h2>
         </div>
-
-        <h2 class="access-title">
-          진료기록열람하기
-        </h2>
 
         <div class="access-copy">
           원하는 플랫폼에서 이야기를 시작하세요.
         </div>
-
       </div>
 
-
-      <div class="access-buttons">
+      <div class="access-list">
 
         <a
           class="access-button"
@@ -1663,31 +991,16 @@ img{
     </div>
 
   </div>
-
 </section>
 
 
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
 <footer class="footer">
-
-  <div class="footer-code">
-    SEONGWOON UNIVERSITY MEDICAL CENTER
-  </div>
-
-  <div class="footer-main">
-    © 2026 아몬드송송 · ALL RIGHTS RESERVED
-  </div>
-
+  <div class="footer-code">SEONGWOON UNIVERSITY MEDICAL CENTER</div>
+  <div class="footer-main">© 2026 아몬드송송 · ALL RIGHTS RESERVED</div>
   <div class="footer-text">
     본 작품의 세계관 · 캐릭터 설정 · 스토리 · 창작 요소 및
-    HTML 구조 · 레이아웃 · 디자인의
-    무단 복제, 도용, 변형 및 재배포를 금합니다.
+    HTML 구조 · 레이아웃 · 디자인의 무단 복제, 도용, 변형 및 재배포를 금합니다.
   </div>
-
 </footer>
 
 </body>
